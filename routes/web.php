@@ -5,7 +5,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
 
-    $users = \App\Models\User::all();
+    // $users = \App\Models\User::all();
     return Inertia::render('welcome', [
         'phpVersion' => PHP_VERSION,
     ]);
