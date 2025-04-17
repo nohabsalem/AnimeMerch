@@ -74,11 +74,12 @@ export default function Login({ status, canResetPassword }) {
                             checked={data.remember}
                             onClick={() => setData('remember', !data.remember)}
                             tabIndex={3}
+                            className="data-[state=checked]:bg-[#6C3989] data-[state=checked]:border-[#]"
                         />
                         <Label htmlFor="remember">Remember me</Label>
                     </div>
 
-                    <Button type="submit" className="mt-4 w-full" tabIndex={4} disabled={processing}>
+                    <Button type="submit" className="mt-4 w-full bg-[#FF39B7] hover:bg-[#FF39B7]" tabIndex={4} disabled={processing}>
                         {processing && <LoaderCircle className="h-4 w-4 animate-spin" />}
                         Log in
                     </Button>
