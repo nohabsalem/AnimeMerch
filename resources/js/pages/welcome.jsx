@@ -53,6 +53,10 @@ export default function Welcome({ phpVersion }) {
             <main className="flex flex-col items-center justify-center gap-4 px-6 py-8">
                 <h1 className="text-4xl font-bold text-[#6C3989]">Bienvenue sur AnimeMerch</h1>
                 <p className="text-lg text-gray-700">Votre destination ultime pour les produits dérivés d'animés !</p>
+
+                <button className="mt-4 rounded-xl bg-[#ff39b6ea] px-10 py-2 text-white hover:bg-[#FF39B7] ">
+                    <Link href="/products">Shopper</Link>
+                </button>
                 < ProductCards />
             </main>
 
