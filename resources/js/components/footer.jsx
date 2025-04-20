@@ -4,9 +4,6 @@ export default function Footer() {
     return (
         <footer className="w-full bg-[#6C3989] text-white py-5 px-6">
             <div className="flex items-center justify-center gap-4">
-                {/* <a href="/privacy" className="text-sm hover:underline">Politique de confidentialité</a>
-                <a href="/terms" className="text-sm hover:underline">Conditions d'utilisation</a> * */}
-
                 <Link to="/" className="text-sm hover:underline mb-2 sm:mb-0">
                     Accueil
                 </Link>
