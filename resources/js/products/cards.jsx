@@ -1,7 +1,7 @@
 import React from 'react';
 import example from "@/assets/img/jotaro.svg";
 import useCart from "../pages/cart/cart";
-import { Inertia } from '@inertiajs/inertia';
+// import { Inertia } from '@inertiajs/inertia';
 
 export default function ProductCards() {
     const { addToCart } = useCart();
