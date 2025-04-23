@@ -26,6 +26,12 @@ export default function Welcome({ phpVersion }) {
                     ) : (
                         <>
                             <Link
+                                href={route('cart')}
+                                className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-white hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]"
+                            >
+                                Panier
+                            </Link>
+                            <Link
                                 href={route('login')}
                                 className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-white hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]"
                             >
