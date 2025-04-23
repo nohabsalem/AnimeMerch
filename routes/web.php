@@ -20,6 +20,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
 require __DIR__ . '/settings.php';
 require __DIR__ . '/auth.php';
 
+// Page 404 
 Route::fallback(function () {
     return Inertia::render('errors/404');
 })->name('fallback');
+
+// Cart System
+Route::get('/cart', function () {
+    return Inertia::render('cart/cart-affichage');
+})->name('cart');
