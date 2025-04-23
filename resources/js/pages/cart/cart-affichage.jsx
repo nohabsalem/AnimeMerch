@@ -19,7 +19,7 @@ export default function Cart() {
                     <p>Votre panier est vide.</p>
                 ) : (
                     <div className="flex">
-                        {/* Liste des produits */}
+
                         <div className="w-2/3 pr-4">
                             <div className="bg-white p-4 rounded shadow-md border-2 border-[#6C3989]">
                                 <ul className="space-y-2">
@@ -29,25 +29,17 @@ export default function Cart() {
                                                 <strong>{item.name}</strong>
                                                 <p>Prix : {item.price} €</p>
 
-                                                {/* Sélection couleur */}
                                                 <div className="flex items-center mt-2">
                                                     <span>Couleur :</span>
                                                     <select className="ml-2 border rounded">
-                                                        <option>Vert</option>
-                                                        <option>Bleu</option>
-                                                        <option>Rouge</option>
+                                                        <option>Options dispos</option>
                                                     </select>
                                                 </div>
 
-                                                {/* Sélection taille */}
                                                 <div className="flex items-center mt-2">
                                                     <span>Taille :</span>
                                                     <select className="ml-2 border rounded">
-                                                        <option>XS</option>
-                                                        <option>S</option>
-                                                        <option>M</option>
-                                                        <option>L</option>
-                                                        <option>XL</option>
+                                                        <option>Tailles dispos</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -66,7 +58,7 @@ export default function Cart() {
                             </div>
                         </div>
 
-                        {/* Récapitulatif du panier */}
+
                         <div className="w-1/3 bg-white p-4 rounded shadow-md border-2 border-[#6C3989]">
                             <h2 className="text-xl font-bold mb-4">Récapitulatif</h2>
                             <p>Total articles : {cart.length}</p>
@@ -78,8 +70,6 @@ export default function Cart() {
                                 onClick={() => clearCart()}>
                                 Vider le panier
                             </button>
-
-
 
                             <button className="mt-4 px-4 py-2 bg-[#FF39B7] text-white rounded-md w-full">
                                 Passer commande
