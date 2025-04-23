@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <footer className="w-full bg-[#6C3989] text-white py-5 px-6">
             <div className="flex items-center justify-center gap-4">
-                <Link to="/" className="text-sm hover:underline mb-2 sm:mb-0">
+                <Link to="/about" className="text-sm hover:underline mb-2 sm:mb-0">
                     Accueil
                 </Link>
                 <Link to="/about" className="text-sm hover:underline mb-2 sm:mb-0">
