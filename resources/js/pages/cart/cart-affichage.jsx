@@ -1,6 +1,6 @@
 import React from 'react';
 import useCart from './cart';
-
+import { Inertia } from '@inertiajs/inertia'
 // import Header from '../../components/header';
 import Footer from '../../components/footer';
 import bin from "../../assets/img/bin.svg"
@@ -32,14 +32,14 @@ export default function Cart() {
                                                 <div className="flex items-center mt-2">
                                                     <span>Couleur :</span>
                                                     <select className="ml-2 border rounded">
-                                                        <option>Options dispos</option>
+                                                        <option>exemple</option>
                                                     </select>
                                                 </div>
 
                                                 <div className="flex items-center mt-2">
                                                     <span>Taille :</span>
                                                     <select className="ml-2 border rounded">
-                                                        <option>Tailles dispos</option>
+                                                        <option>exemple</option>
                                                     </select>
                                                 </div>
                                             </div>
