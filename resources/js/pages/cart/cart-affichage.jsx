@@ -71,7 +71,7 @@ export default function Cart() {
 
                                             <button
                                                 className="cursor-pointer"
-                                                onClick={() => removeFromCart(item.id)}
+                                                onClick={() => removeFromCart(index)}
                                             >
                                                 <img src={bin} alt="Supprimer" className="w-6 h-6" />
                                             </button>

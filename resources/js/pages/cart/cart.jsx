@@ -14,8 +14,8 @@ export default function useCart() {
         setCart((prev) => [...prev, item]);
     };
 
-    const removeFromCart = (id) => {
-        setCart((prev) => prev.filter((item) => item.id !== id));
+    const removeFromCart = (indexToDelete) => {
+        setCart((prev) => prev.filter((item, index) => indexToDelete !== index));
     };
 
     const clearCart = () => setCart([]);
