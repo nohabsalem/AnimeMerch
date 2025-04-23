@@ -1,7 +1,7 @@
 import React from 'react';
 import example from "@/assets/img/jotaro.svg";
 import useCart from "../pages/cart/cart";
-import { Inertia } from '@inertiajs/inertia';
+// import { Inertia } from '@inertiajs/inertia';
 import { Link } from '@inertiajs/react';
 
 export default function ProductCards() {
@@ -19,6 +19,7 @@ export default function ProductCards() {
                 <div
                     key={product.id}
                     className="bg-white shadow-md rounded-xl p-4 flex flex-col"
+
                 >
                     <img
                         src={product.imageUrl}
@@ -32,7 +33,7 @@ export default function ProductCards() {
                     </Link>
                     <button
                         onClick={() => {
-                            Inertia.get('/cart');
+                            // Inertia.get('/cart');
                             console.log("Ajouté au panier :", product);
                             addToCart(product);
                         }}
