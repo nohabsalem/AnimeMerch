@@ -1,6 +1,7 @@
 import React from 'react';
 import example from "@/assets/img/jotaro.svg";
 import useCart from "../pages/cart/cart";
+import { Inertia } from '@inertiajs/inertia';
 
 export default function ProductCards() {
     const { addToCart } = useCart();
@@ -27,6 +28,8 @@ export default function ProductCards() {
                     <p className="text-gray-600 mb-4">{product.price} €</p>
                     <button
                         onClick={() => {
+                            // navigate ('/cart');
+                            // Inertia.get('/cart');
                             console.log("Ajouté au panier :", product);
                             addToCart(product);
                         }}
