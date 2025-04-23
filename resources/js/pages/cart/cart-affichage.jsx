@@ -25,7 +25,7 @@ export default function Cart() {
                                 <ul className="space-y-2">
                                     {cart.map((item, index) => (
                                         <li key={index} className="border p-2 rounded flex justify-between items-center">
-                                            <div>
+                                            {/* <div>
                                                 <strong>{item.name}</strong>
                                                 <p>Prix : {item.price} €</p>
 
@@ -41,6 +41,31 @@ export default function Cart() {
                                                     <select className="ml-2 border rounded">
                                                         <option>exemple</option>
                                                     </select>
+                                                </div>
+                                            </div> */}
+                                            <div className="flex items-start space-x-4">
+                                                <img
+                                                    src={item.imageUrl}
+                                                    alt={item.name}
+                                                    className="w-35 h-35 object-cover rounded border"
+                                                />
+                                                <div>
+                                                    <strong>{item.name}</strong>
+                                                    <p>Prix : {item.price} €</p>
+
+                                                    <div className="flex items-center mt-2">
+                                                        <span>Couleur :</span>
+                                                        <select className="ml-2 border rounded">
+                                                            <option>exemple</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div className="flex items-center mt-2">
+                                                        <span>Taille :</span>
+                                                        <select className="ml-2 border rounded">
+                                                            <option>exemple</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
 
