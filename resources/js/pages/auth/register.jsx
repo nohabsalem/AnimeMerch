@@ -24,12 +24,12 @@ export default function Register() {
     };
 
     return (
-        <AuthLayout title="Create an account" description="Enter your details below to create your account">
+        <AuthLayout title="Créer un compte" description="Entrez vos informations pour créer un compte.">
             <Head title="Register" />
-            <form className="flex flex-col gap-6" onSubmit={submit}>
+            <form className="flex flex-col gap-6 border-2 border-[#6C3989] rounded-md p-6" onSubmit={submit}>
                 <div className="grid gap-6">
                     <div className="grid gap-2">
-                        <Label htmlFor="name">Name</Label>
+                        <Label htmlFor="name" className="mb-2">Prénom :</Label>  {/* Ajout du mb-2 pour l'espacement */}
                         <Input
                             id="name"
                             type="text"
@@ -40,13 +40,14 @@ export default function Register() {
                             value={data.name}
                             onChange={(e) => setData('name', e.target.value)}
                             disabled={processing}
-                            placeholder="Full name"
+                            placeholder="Prénom"
+                            className="p-2"
                         />
                         <InputError message={errors.name} className="mt-2" />
                     </div>
 
                     <div className="grid gap-2">
-                        <Label htmlFor="email">Email address</Label>
+                        <Label htmlFor="email" className="mb-2">Adresse mail :</Label>
                         <Input
                             id="email"
                             type="email"
@@ -57,12 +58,13 @@ export default function Register() {
                             onChange={(e) => setData('email', e.target.value)}
                             disabled={processing}
                             placeholder="email@example.com"
+                            className="p-2"
                         />
                         <InputError message={errors.email} />
                     </div>
 
                     <div className="grid gap-2">
-                        <Label htmlFor="password">Password</Label>
+                        <Label htmlFor="password" className="mb-2">Mot de passe :</Label>
                         <Input
                             id="password"
                             type="password"
@@ -72,13 +74,14 @@ export default function Register() {
                             value={data.password}
                             onChange={(e) => setData('password', e.target.value)}
                             disabled={processing}
-                            placeholder="Password"
+                            placeholder="Entrez votre mot de passe"
+                            className="p-2"
                         />
                         <InputError message={errors.password} />
                     </div>
 
                     <div className="grid gap-2">
-                        <Label htmlFor="password_confirmation">Confirm password</Label>
+                        <Label htmlFor="password_confirmation" className="mb-2">Confirmation de mot de passe</Label>
                         <Input
                             id="password_confirmation"
                             type="password"
@@ -88,24 +91,26 @@ export default function Register() {
                             value={data.password_confirmation}
                             onChange={(e) => setData('password_confirmation', e.target.value)}
                             disabled={processing}
-                            placeholder="Confirm password"
+                            placeholder="Confirmez votre mot de passe"
+                            className="p-2"
                         />
                         <InputError message={errors.password_confirmation} />
                     </div>
 
-                    <Button type="submit" className="mt-2 w-full bg-[#FF39B7] hover:bg-[#FF39B7] " tabIndex={5} disabled={processing}>
+                    <Button type="submit" className="mt-4 w-full bg-[#FF39B7] hover:bg-[#FF39B7]" tabIndex={5} disabled={processing}>
                         {processing && <LoaderCircle className="h-4 w-4 animate-spin" />}
-                        Create account
+                        Créer un compte
                     </Button>
                 </div>
 
-                <div className="text-muted-foreground text-center text-sm">
-                    Already have an account?{' '}
-                    <TextLink href={route('login')} tabIndex={6}>
-                        Log in
+                <div className="text-muted-foreground text-center text-sm mt-4">
+                    Vous avez déjà un compte ?{' '}
+                    <TextLink href={route('login')} tabIndex={6} className="text-[#6C3989]">
+                        Connectez-vous.
                     </TextLink>
                 </div>
             </form>
+
         </AuthLayout>
     );
 }
