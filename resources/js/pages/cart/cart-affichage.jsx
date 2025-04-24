@@ -1,7 +1,7 @@
 import React from 'react';
 import useCart from './cart';
 import { Inertia } from '@inertiajs/inertia'
-// import Header from '../../components/header';
+import Header from '../../components/header';
 import Footer from '../../components/footer';
 import bin from "../../assets/img/bin.svg"
 
@@ -10,7 +10,7 @@ export default function Cart() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            {/* <Header /> */}
+            <Header />
 
             <main className="flex-1 p-4">
                 <h1 className="text-2xl font-bold mb-4">Votre panier : </h1>
