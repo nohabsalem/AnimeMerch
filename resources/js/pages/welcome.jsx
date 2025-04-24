@@ -26,6 +26,12 @@ export default function Welcome({ phpVersion }) {
                     ) : (
                         <>
                             <Link
+                                href={route('cart')}
+                                className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-white hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]"
+                            >
+                                Panier
+                            </Link>
+                            <Link
                                 href={route('login')}
                                 className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-white hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]"
                             >
@@ -54,7 +60,7 @@ export default function Welcome({ phpVersion }) {
                 <h1 className="text-4xl font-bold text-[#6C3989]">Bienvenue sur AnimeMerch</h1>
                 <p className="text-lg text-gray-700">Votre destination ultime pour les produits dérivés d'animés !</p>
 
-                <button className="mt-4 rounded-xl bg-[#ff39b6ea] px-10 py-2 text-white hover:bg-[#FF39B7] ">
+                <button className="mt-4 rounded-xl bg-[#FF39B7] px-10 py-2 text-white ">
                     <Link href="/products">Shopper</Link>
                 </button>
                 < ProductCards />
