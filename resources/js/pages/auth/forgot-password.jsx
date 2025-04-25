@@ -28,7 +28,7 @@ export default function ForgotPassword({ status }) {
 
                 {status && <div className="mb-4 text-center text-sm font-medium text-green-600">{status}</div>}
 
-                <div className="space-y-6 border-2 border-[#6C3989]">
+                <div className="space-y-6 border-2 border-[#6C3989] rounded-md p-6">
                     <form onSubmit={submit} >
                         <div className="grid gap-2">
                             <Label htmlFor="email">Adresse mail :</Label>
@@ -47,7 +47,7 @@ export default function ForgotPassword({ status }) {
                         </div>
 
                         <div className="my-6 flex items-center justify-start">
-                            <Button className="w-full bg-[#FF39B7]" disabled={processing}>
+                            <Button className="w-full bg-[#FF39B7] hover:bg-pink-600" disabled={processing}>
                                 {processing && <LoaderCircle className="h-4 w-4 animate-spin " />}
                                 Envoyer un lien de réinitialisation
                             </Button>
