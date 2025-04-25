@@ -1,7 +1,7 @@
 import React from 'react';
 import useCart from './cart';
 import { Inertia } from '@inertiajs/inertia'
-// import Header from '../../components/header';
+import Header from '../../components/header';
 import Footer from '../../components/footer';
 import bin from "../../assets/img/bin.svg"
 
@@ -10,7 +10,7 @@ export default function Cart() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            {/* <Header /> */}
+            <Header />
 
             <main className="flex-1 p-4">
                 <h1 className="text-2xl font-bold mb-4">Votre panier : </h1>
@@ -22,6 +22,8 @@ export default function Cart() {
 
                         <div className="w-2/3 pr-4">
                             <div className="bg-white p-4 rounded shadow-md border-2 border-[#6C3989]">
+                                <h2 className="text-xl font-bold mb-4">Vos articles :</h2>
+
                                 <ul className="space-y-2">
                                     {cart.map((item, index) => (
                                         <li key={index} className="border p-2 rounded flex justify-between items-center">
