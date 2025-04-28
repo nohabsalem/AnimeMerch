@@ -12,6 +12,19 @@ const mainNavItems = [
         url: '/dashboard',
         icon: LayoutGrid,
     },
+
+    {
+        title: 'Compte',
+        url: '/settings/profile',
+        icon: LayoutGrid,
+    },
+
+    {
+        title: 'FakeCard',
+        url: '/dashboard',
+        icon: LayoutGrid,
+    },
+
 ];
 
 const footerNavItems = [

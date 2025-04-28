@@ -29,3 +29,10 @@ Route::fallback(function () {
 Route::get('/cart', function () {
     return Inertia::render('cart/cart-affichage');
 })->name('cart');
+
+//Admin views
+Route::get('/admin', function () {
+    return Inertia::render('admin/dashboard');
+})->name('admin');
+
+//UserViews

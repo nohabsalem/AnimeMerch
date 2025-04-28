@@ -12,7 +12,7 @@ import SettingsLayout from '@/layouts/settings/layout';
 
 const breadcrumbs = [
     {
-        title: 'Profile settings',
+        title: 'Paramètres du profil',
         href: '/settings/profile',
     },
 ];
@@ -35,15 +35,15 @@ export default function Profile({ mustVerifyEmail, status }) {
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Profile settings" />
+            <Head title="Profil" />
 
             <SettingsLayout>
                 <div className="space-y-6">
-                    <HeadingSmall title="Profile information" description="Update your name and email address" />
+                    <HeadingSmall title="Profil" description="Mettez à jour vos informations" />
 
                     <form onSubmit={submit} className="space-y-6">
                         <div className="grid gap-2">
-                            <Label htmlFor="name">Name</Label>
+                            <Label htmlFor="name">Nom :</Label>
 
                             <Input
                                 id="name"
@@ -52,14 +52,14 @@ export default function Profile({ mustVerifyEmail, status }) {
                                 onChange={(e) => setData('name', e.target.value)}
                                 required
                                 autoComplete="name"
-                                placeholder="Full name"
+                                placeholder="Nom complet"
                             />
 
                             <InputError className="mt-2" message={errors.name} />
                         </div>
 
                         <div className="grid gap-2">
-                            <Label htmlFor="email">Email address</Label>
+                            <Label htmlFor="email">Adresse mail :</Label>
 
                             <Input
                                 id="email"
@@ -69,7 +69,7 @@ export default function Profile({ mustVerifyEmail, status }) {
                                 onChange={(e) => setData('email', e.target.value)}
                                 required
                                 autoComplete="username"
-                                placeholder="Email address"
+                                placeholder="email@example.com"
                             />
 
                             <InputError className="mt-2" message={errors.email} />
@@ -78,27 +78,27 @@ export default function Profile({ mustVerifyEmail, status }) {
                         {mustVerifyEmail && auth.user.email_verified_at === null && (
                             <div>
                                 <p className="text-muted-foreground -mt-4 text-sm">
-                                    Your email address is unverified.{' '}
+                                    Votre adresse mail n'a pas été vérifée.{' '}
                                     <Link
                                         href={route('verification.send')}
                                         method="post"
                                         as="button"
                                         className="text-foreground underline decoration-neutral-300 underline-offset-4 transition-colors duration-300 ease-out hover:decoration-current! dark:decoration-neutral-500"
                                     >
-                                        Click here to resend the verification email.
+                                        Cliquez ici pour renvoyer le lien de vérification.
                                     </Link>
                                 </p>
 
                                 {status === 'verification-link-sent' && (
                                     <div className="mt-2 text-sm font-medium text-green-600">
-                                        A new verification link has been sent to your email address.
+                                        Un nouveau lien de vérification a été envoyé à votre adresse mail.
                                     </div>
                                 )}
                             </div>
                         )}
 
-                        <div className="flex items-center gap-4">
-                            <Button disabled={processing}>Save</Button>
+                        <div className="flex items-center gap-4 ">
+                            <Button className="bg-[#FF39B7] hover:bg-pink-600 cursor-pointer" disabled={processing}>Enregistrer</Button>
 
                             <Transition
                                 show={recentlySuccessful}
