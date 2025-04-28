@@ -20,7 +20,7 @@ const mainNavItems = [
     },
 
     {
-        title: 'loremipsum,',
+        title: 'FakeCard',
         url: '/dashboard',
         icon: LayoutGrid,
     },
