@@ -36,3 +36,10 @@ Route::get('/admin', function () {
 })->name('admin');
 
 //UserViews
+
+//Products Views
+Route::get('/products/{id}', function ($id) {
+    return Inertia::render('products/details', [
+        'id' => $id,
+    ]);
+});
