@@ -4,46 +4,44 @@ import useCart from '../cart/cart';
 import { Link } from '@inertiajs/react';
 
 export const products = [
+    // images: {
+    //     back: example
+
     {
         id: 1,
         imageUrl: example,
-        name: 'Tee-shirt Jotaro',
-        price: 29.99,
-        description: 'Un tee-shirt de qualité supérieure avec un design unique de Jotaro.',
-        matiere: '100% coton biologique.',
-
-        // Images du produit :
-        // images: {
-        //     back: example
+        name: 'Jean-Neymar',
+        price: 24.99,
+        description: 'Jean-Neymar',
+        matiere: 'Jean-Neymar de coder',
         sizes: [
-            { id: 1, name: 'S', stock: 10 },
+            { id: 1, name: 'S', stock: 12 },
             { id: 2, name: 'M', stock: 5 },
             { id: 3, name: 'L', stock: 0 },
-            { id: 4, name: 'XL', stock: 2 },
+            { id: 4, name: 'XL', stock: 10 },
         ],
     },
     {
         id: 2,
         imageUrl: example,
-        name: 'Titi le tshirt',
-        price: 19.99,
-        description: 'Titi le tshirt',
-        matiere: '96% polyester, 4% coton.',
-
+        name: 'ID 2',
+        price: 24.99,
+        description: 'ID 2',
+        matiere: 'Tee-shirt avec ID 2.',
         sizes: [
-            { id: 1, name: 'S', stock: 1 },
-            { id: 2, name: 'M', stock: 50 },
-            { id: 3, name: 'L', stock: 8 },
-            { id: 4, name: 'XL', stock: 0 },
+            { id: 1, name: 'S', stock: 12 },
+            { id: 2, name: 'M', stock: 5 },
+            { id: 3, name: 'L', stock: 0 },
+            { id: 4, name: 'XL', stock: 10 },
         ],
     },
     {
         id: 3,
         imageUrl: example,
-        name: 'Bombardillo Crocodillo',
+        name: 'Teeshirt bg',
         price: 24.99,
-        description: 'Bombardillo Crocodillo',
-        matiere: '100% écailles de crocodile.',
+        description: 'ID 3',
+        matiere: 'Beau gosse',
         sizes: [
             { id: 1, name: 'S', stock: 12 },
             { id: 2, name: 'M', stock: 5 },
