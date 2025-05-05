@@ -30,12 +30,23 @@ export default function Cart() {
                                                     <strong>{item.name}</strong>
                                                     <p>Prix : {item.price} €</p>
 
-                                                    <div className="mt-2 flex items-center">
+                                                    {/* <div className="mt-2 flex items-center">
                                                         <span>Taille :</span>
                                                         <select className="ml-2 rounded border">
                                                             {item.sizes?.map((size) => (
                                                                 <option key={size.id} value={size.name}>
                                                                     {size.name}
+                                                                </option>
+                                                            ))}
+                                                        </select>
+                                                    </div> */}
+
+                                                    <div className="mt-2 flex items-center">
+                                                        <span>Taille :</span>
+                                                        <select className="ml-2 rounded border">
+                                                            {item.sizes?.map((size) => (
+                                                                <option key={size.id} value={size.name} disabled={size.stock === 0}>
+                                                                    {size.name} {size.stock === 0 ? '(hors stock)' : ''}
                                                                 </option>
                                                             ))}
                                                         </select>
@@ -66,7 +77,12 @@ export default function Cart() {
                                 Vider le panier
                             </button>
 
-                            <button className="mt-4 w-full cursor-pointer rounded-md bg-[#FF39B7] px-4 py-2 text-white">Passer commande</button>
+                            <button
+                                className="mt-4 w-full cursor-pointer rounded-md bg-[#FF39B7] px-4 py-2 text-white"
+                                onClick={() => alert('Commande passée !')}
+                            >
+                                Passer commande
+                            </button>
                         </div>
                     </div>
                 )}
