@@ -43,3 +43,7 @@ Route::get('/products/{id}', function ($id) {
         'id' => $id,
     ]);
 });
+
+Route::get('/products', function () {
+    return Inertia::render('products/list');
+})->name('products');
