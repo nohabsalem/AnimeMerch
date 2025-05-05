@@ -45,10 +45,10 @@ export const products = [
         description: 'Bombardillo Crocodillo',
         matiere: '100% écailles de crocodile.',
         sizes: [
-            { id: 1, name: 'S', stock: 0 },
-            { id: 2, name: 'M', stock: 0 },
+            { id: 1, name: 'S', stock: 12 },
+            { id: 2, name: 'M', stock: 5 },
             { id: 3, name: 'L', stock: 0 },
-            { id: 4, name: 'XL', stock: 0 },
+            { id: 4, name: 'XL', stock: 10 },
         ],
     },
 ];
