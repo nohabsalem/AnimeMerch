@@ -7,8 +7,8 @@ export default function Footer() {
                 <Link href="/" className="mb-2 text-sm hover:underline sm:mb-0">
                     Accueil
                 </Link>
-                <Link href="/about" className="mb-2 text-sm hover:underline sm:mb-0">
-                    À propos de nous
+                <Link href="/about-us" className="mb-2 text-sm hover:underline sm:mb-0">
+                    À propos
                 </Link>
                 <Link href="/privacy-policy" className="mb-2 text-sm hover:underline sm:mb-0">
                     Politique de Confidentialité
