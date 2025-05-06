@@ -47,3 +47,8 @@ Route::get('/products/{id}', function ($id) {
 Route::get('/products', function () {
     return Inertia::render('products/list');
 })->name('products');
+
+// Policy Pages :
+Route::get('/terms-of-sale', function () {
+    return Inertia::render('policies/cgv');
+})->name('cgv');
