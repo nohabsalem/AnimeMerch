@@ -52,3 +52,7 @@ Route::get('/products', function () {
 Route::get('/terms-of-sale', function () {
     return Inertia::render('policies/cgv');
 })->name('cgv');
+
+Route::get('/privacy-policy', function () {
+    return Inertia::render('policies/privacy-policy');
+})->name('cgv');
