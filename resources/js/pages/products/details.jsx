@@ -99,11 +99,8 @@ export default function ProductDetails({ id }) {
                                 }
 
                                 const productToAdd = {
-                                    id: product.id,
-                                    name: product.name,
-                                    imageUrl: product.imageUrl,
-                                    price: product.price,
-                                    size: selectedSize.name,
+                                    ...product,
+                                    selectedSize: selectedSize.name,
                                     quantity: 1,
                                 };
 
