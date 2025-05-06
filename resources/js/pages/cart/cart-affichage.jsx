@@ -5,7 +5,7 @@ import useCart from './cart';
 
 export default function Cart() {
     const { cart, removeFromCart, clearCart } = useCart();
-
+    console.log('CART', cart);
     return (
         <div className="flex min-h-screen flex-col">
             <Header />
@@ -45,7 +45,12 @@ export default function Cart() {
                                                         <span>Taille :</span>
                                                         <select className="ml-2 rounded border">
                                                             {item.sizes?.map((size) => (
-                                                                <option key={size.id} value={size.name} disabled={size.stock === 0}>
+                                                                <option
+                                                                    key={size.id}
+                                                                    value={size.name}
+                                                                    disabled={size.stock === 0}
+                                                                    defaultValue={item.selectedSize === size.name}
+                                                                >
                                                                     {size.name} {size.stock === 0 ? '(hors stock)' : ''}
                                                                 </option>
                                                             ))}
@@ -61,14 +66,14 @@ export default function Cart() {
                                     ))}
                                 </ul>
 
-                                <p className="mt-4">Total : {cart.reduce((sum, item) => sum + item.price, 0)} €</p>
+                                <p className="mt-4">Total : {cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)} €</p>
                             </div>
                         </div>
 
                         <div className="w-1/3 rounded border-2 border-[#6C3989] bg-white p-4 shadow-md">
                             <h2 className="mb-4 text-xl font-bold">Récapitulatif</h2>
                             <p>Total articles : {cart.length}</p>
-                            <p className="text-lg font-bold">Total : {cart.reduce((sum, item) => sum + item.price, 0)} €</p>
+                            <p className="text-lg font-bold">Total : {cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)} €</p>
 
                             <button
                                 className="mt-4 w-full cursor-pointer rounded-md bg-red-600 px-4 py-2 text-white hover:bg-red-700"
