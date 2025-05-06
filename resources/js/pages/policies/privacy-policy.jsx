@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
                                 Si vous avez des questions ou des préoccupations concernant la manière dont nous traitons vos données personnelles,
                                 veuillez nous contacter à :
                             </p>
-                            <p className="mt-2 text-lg text-gray-700">Email : [contact@votresite.com]</p>
+                            <p className="mt-2 text-lg text-gray-700">Email : [contact@animemerch.com]</p>
                         </section>
                     </div>
                 </div>
