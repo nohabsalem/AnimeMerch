@@ -1,5 +1,5 @@
+import logo from '@/assets/img/jojo-logo.png';
 import { Link, usePage } from '@inertiajs/react';
-import square from '../assets/img/square.png';
 export default function Header() {
     const { auth } = usePage().props;
 
@@ -7,7 +7,7 @@ export default function Header() {
         <header className="w-full bg-[#6C3989] px-6 py-3 text-white">
             <div className="flex items-center justify-between">
                 <Link href="/">
-                    <img src={square} alt="Logo" className="h-10 w-auto" />
+                    <img src={logo} alt="Logo" className="h-12 w-auto" />
                 </Link>
 
                 <nav className="flex items-center justify-end gap-4 bg-[#6C3989]">
