@@ -7,7 +7,7 @@ import Searchbar from '../../components/searchbar';
 import ProductCards from './cards';
 
 export default function ProductList() {
-    const [showFilters, setShowFilters] = useState(true);
+    const [showFilters, setShowFilters] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
