@@ -54,6 +54,7 @@ export default function ProductList() {
                                     ⨯ Réinitialiser les filtres
                                 </button>
                             </div>
+
                             <PriceFilter />
                             <SizeFilter />
                         </div>
