@@ -26,12 +26,9 @@ export default function Sort({ sort, setSort }) {
 
     return (
         <div className="relative inline-block text-left">
-            <button
-                onClick={() => setShowOptions((prev) => !prev)}
-                className="flex items-center gap-2 rounded-xl border-2 border-black px-4 py-2 text-xl font-semibold"
-            >
+            <button onClick={() => setShowOptions((prev) => !prev)} className="flex items-center gap-2 rounded-xl px-5 py-2 text-xl font-semibold">
                 <img src={SortArrow} alt="Flèche de tri" className="h-4 w-4" />
-                <span className="text-sm">Trier par</span>
+                <span className="cursor-pointer text-sm">Trier par</span>
             </button>
 
             {showOptions && (
@@ -40,7 +37,7 @@ export default function Sort({ sort, setSort }) {
                         <button
                             key={option.value}
                             onClick={() => handleSortChange(option.value)}
-                            className={`flex w-full items-center justify-between px-4 py-2 hover:bg-gray-100 ${
+                            className={`flex w-full cursor-pointer items-center justify-between px-4 py-2 hover:bg-gray-100 ${
                                 sort === option.value ? 'font-bold' : ''
                             }`}
                         >
