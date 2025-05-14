@@ -25,7 +25,7 @@ export const products = [
         id: 2,
         imageUrl: example,
         name: 'ID 2',
-        price: 24.99,
+        price: 38.99,
         description: 'ID 2',
         matiere: 'Tee-shirt avec ID 2.',
         sizes: [
