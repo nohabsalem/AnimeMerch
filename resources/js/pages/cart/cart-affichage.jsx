@@ -1,8 +1,8 @@
+import { Link } from '@inertiajs/react';
 import bin from '../../assets/img/bin.svg';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import useCart from './cart';
-
 export default function Cart() {
     const { cart, removeFromCart, clearCart } = useCart();
     console.log('CART', cart);
@@ -81,12 +81,8 @@ export default function Cart() {
                             >
                                 Vider le panier
                             </button>
-
-                            <button
-                                className="mt-4 w-full cursor-pointer rounded-md bg-[#FF39B7] px-4 py-2 text-white"
-                                onClick={() => alert('Commande passée !')}
-                            >
-                                Passer commande
+                            <button className="mt-4 w-full cursor-pointer rounded-md bg-[#FF39B7] px-4 py-2 text-white">
+                                <Link href="/command">Passer commande</Link>
                             </button>
                         </div>
                     </div>
