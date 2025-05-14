@@ -39,7 +39,7 @@ export const products = [
         id: 3,
         imageUrl: example,
         name: 'Teeshirt bg',
-        price: 24.99,
+        price: 14.99,
         description: 'ID 3',
         matiere: 'Beau gosse',
         sizes: [
