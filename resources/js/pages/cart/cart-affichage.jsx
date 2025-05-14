@@ -16,16 +16,16 @@ export default function Cart() {
                 {cart.length === 0 ? (
                     <p>Votre panier est vide.</p>
                 ) : (
-                    <div className="flex">
-                        <div className="w-2/3 pr-4">
+                    <div className="flex flex-col gap-4 md:flex-row">
+                        <div className="flex-auto md:flex-2/3">
                             <div className="rounded border-2 border-[#6C3989] bg-white p-4 shadow-md">
                                 <h2 className="mb-4 text-xl font-bold">Vos articles :</h2>
 
                                 <ul className="space-y-2">
                                     {cart.map((item, index) => (
-                                        <li key={index} className="flex items-center justify-between rounded border p-2">
-                                            <div className="flex items-start space-x-4">
-                                                <img src={item.imageUrl} alt={item.name} className="h-35 w-35 rounded border object-cover" />
+                                        <li key={index} className="flex items-center gap-3 rounded border p-2">
+                                            <img src={item.imageUrl} alt={item.name} className="h-35 w-35 rounded border object-cover" />
+                                            <div className="flex flex-auto flex-wrap items-center justify-between gap-4 space-x-4">
                                                 <div>
                                                     <strong>{item.name}</strong>
                                                     <p>Prix : {item.price} €</p>
@@ -41,7 +41,7 @@ export default function Cart() {
                                                         </select>
                                                     </div> */}
 
-                                                    <div className="mt-2 flex items-center">
+                                                    <div className="mt-2 flex flex-wrap items-center">
                                                         <span>Taille :</span>
                                                         <select className="ml-2 rounded border">
                                                             {item.sizes?.map((size) => (
@@ -57,11 +57,10 @@ export default function Cart() {
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <button className="cursor-pointer" onClick={() => removeFromCart(index)}>
+                                                    <img src={bin} alt="Supprimer" className="h-6 w-6" />
+                                                </button>
                                             </div>
-
-                                            <button className="cursor-pointer" onClick={() => removeFromCart(index)}>
-                                                <img src={bin} alt="Supprimer" className="h-6 w-6" />
-                                            </button>
                                         </li>
                                     ))}
                                 </ul>
@@ -70,7 +69,7 @@ export default function Cart() {
                             </div>
                         </div>
 
-                        <div className="w-1/3 rounded border-2 border-[#6C3989] bg-white p-4 shadow-md">
+                        <div className="flex-auto rounded border-2 border-[#6C3989] bg-white p-4 shadow-md md:flex-1/3">
                             <h2 className="mb-4 text-xl font-bold">Récapitulatif</h2>
                             <p>Total articles : {cart.length}</p>
                             <p className="text-lg font-bold">Total : {cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)} €</p>
@@ -82,7 +81,7 @@ export default function Cart() {
                                 Vider le panier
                             </button>
                             <button className="mt-4 w-full cursor-pointer rounded-md bg-[#FF39B7] px-4 py-2 text-white">
-                                <Link href="/command">Passer commande</Link>
+                                <Link href="/payment">Passer au paiement</Link>
                             </button>
                         </div>
                     </div>
