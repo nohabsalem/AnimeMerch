@@ -33,7 +33,8 @@ export default function ProductList() {
             <main className="flex flex-grow flex-col items-center gap-4 px-4 py-8">
                 <Searchbar />
 
-                <div className="flex w-full max-w-7xl gap-4 px-4 py-2">
+                {/* <div className="flex w-full max-w-7xl gap-4 px-4 py-2"> */}
+                <div className="flex w-full max-w-7xl justify-between py-2">
                     {/* Bouton filtre */}
                     <button
                         className="w-[220px] cursor-pointer rounded-xl border-2 border-[#FF39B7] bg-white px-2 py-1 text-sm font-medium text-[#FF39B7]"
