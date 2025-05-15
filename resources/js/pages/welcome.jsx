@@ -2,8 +2,7 @@ import { Head, Link } from '@inertiajs/react';
 import Banner from '../assets/img/jojo-banner.jpg';
 
 import Footer from '../components/footer';
-import Header from '../components/header';
-import Navbar from '../components/navbar';
+import Header from '../components/navbar';
 import ProductCards from './products/cards';
 
 export default function Welcome({ phpVersion }) {
@@ -13,10 +12,8 @@ export default function Welcome({ phpVersion }) {
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
-
-            {/* <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl"> */}
             <Header />
-            <Navbar />
+            {/* <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl"> */}
 
             <div className="flex w-full items-center justify-center">
                 <img src={Banner} className="max-h-[350px] w-full object-cover" alt="Bannière" />
