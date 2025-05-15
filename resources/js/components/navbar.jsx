@@ -76,35 +76,23 @@ export default function Navbar() {
                         <>
                             <Link
                                 href="/cart"
-                                className="hover:white block rounded-md px-3 py-2 text-base text-white transition hover:bg-white hover:text-[#6C3989] hover:underline"
+                                className="hover:white block rounded-md px-3 py-2 text-white transition hover:bg-white hover:text-[#6C3989] hover:underline"
                             >
                                 Panier
                             </Link>
-                            <Link
-                                to="/dashboard"
-                                className="block rounded-md px-3 py-2 text-base text-white transition hover:bg-white hover:text-[#6C3989]"
-                            >
+                            <Link to="/dashboard" className="block rounded-md px-3 py-2 text-white transition hover:bg-white hover:text-[#6C3989]">
                                 Mon compte
                             </Link>
                         </>
                     ) : (
                         <>
-                            <Link
-                                href="/cart"
-                                className="hover:white block rounded-md px-3 py-2 text-base text-white transition hover:bg-white hover:text-[#6C3989] hover:underline"
-                            >
+                            <Link href="/cart" className="block rounded-md px-3 py-2 text-white transition">
                                 Panier
                             </Link>
-                            <Link
-                                to="/login"
-                                className="block rounded-md px-3 py-2 text-base text-white transition hover:bg-white hover:text-[#6C3989]"
-                            >
+                            <Link to="/login" className="block rounded-md px-3 py-2 text-white transition">
                                 Se connecter
                             </Link>
-                            <Link
-                                to="/register"
-                                className="block rounded-md px-3 py-2 text-base text-white transition hover:bg-white hover:text-[#6C3989]"
-                            >
+                            <Link to="/register" className="block rounded-md px-3 py-2 text-white transition">
                                 S'inscrire
                             </Link>
                         </>
