@@ -4,6 +4,7 @@ import SizeFilter from '../../components/filters/size';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Searchbar from '../../components/searchbar';
+import Sort from '../../components/sort';
 import ProductCards from './cards';
 
 export default function ProductList() {
@@ -32,14 +33,16 @@ export default function ProductList() {
             <main className="flex flex-grow flex-col items-center gap-4 px-4 py-8">
                 <Searchbar />
 
-                {/* Bouton filtre */}
-                <div className="w-full max-w-7xl px-4 py-2">
+                <div className="flex w-full max-w-7xl gap-4 px-4 py-2">
+                    {/* Bouton filtre */}
                     <button
                         className="w-[220px] cursor-pointer rounded-xl border-2 border-[#FF39B7] bg-white px-2 py-1 text-sm font-medium text-[#FF39B7]"
                         onClick={handleToggleFilters}
                     >
                         {showFilters ? 'Masquer les filtres' : 'Afficher les filtres'}
                     </button>
+
+                    <Sort />
                 </div>
 
                 <div className="flex w-full max-w-7xl gap-6">

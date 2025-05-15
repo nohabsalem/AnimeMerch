@@ -3,6 +3,7 @@ import Banner from '../assets/img/jojo-banner.jpg';
 
 import Footer from '../components/footer';
 import Header from '../components/header';
+import Navbar from '../components/navbar';
 import ProductCards from './products/cards';
 
 export default function Welcome({ phpVersion }) {
@@ -15,6 +16,7 @@ export default function Welcome({ phpVersion }) {
 
             {/* <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl"> */}
             <Header />
+            <Navbar />
 
             <div className="flex w-full items-center justify-center">
                 <img src={Banner} className="max-h-[350px] w-full object-cover" alt="Bannière" />

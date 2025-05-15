@@ -60,3 +60,8 @@ Route::get('/privacy-policy', function () {
 Route::get('/about-us', function () {
     return Inertia::render('policies/about');
 })->name('about');
+
+// Payment Pages
+Route::get('/payment', function () {
+    return Inertia::render('commands/payment');
+})->name('payments');
