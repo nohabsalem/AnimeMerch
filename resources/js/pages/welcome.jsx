@@ -2,7 +2,7 @@ import { Head, Link } from '@inertiajs/react';
 import Banner from '../assets/img/jojo-banner.jpg';
 
 import Footer from '../components/footer';
-import Header from '../components/navbar';
+import Header from '../components/header';
 import ProductCards from './products/cards';
 
 export default function Welcome({ phpVersion }) {
