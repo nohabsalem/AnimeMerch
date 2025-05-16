@@ -1,12 +1,9 @@
 import example from '@/assets/img/jotaro.svg';
+import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import useCart from '../cart/cart';
-// import { Inertia } from '@inertiajs/inertia';
-import { Link } from '@inertiajs/react';
-export const products = [
-    // images: {
-    //     back: example
 
+export const products = [
     {
         id: 1,
         imageUrl: example,
@@ -53,7 +50,7 @@ export const products = [
 
 export default function ProductCards() {
     const { addToCart } = useCart();
-    const [selectedSize, setSelectedSize] = useState(null);
+    const [selectedSize, setSelectedSize] = useState({}); // 👈 par produit
 
     return (
         <div className="grid grid-cols-1 gap-6 p-4 sm:grid-cols-2 md:grid-cols-3">
@@ -73,10 +70,15 @@ export default function ProductCards() {
                         {product.sizes.map((size) => (
                             <button
                                 key={size.id}
-                                onClick={() => setSelectedSize(size)}
+                                onClick={() =>
+                                    setSelectedSize((prev) => ({
+                                        ...prev,
+                                        [product.id]: size,
+                                    }))
+                                }
                                 disabled={size.stock === 0}
                                 className={`w-12 rounded-md border p-2 text-sm font-medium transition-colors ${
-                                    selectedSize?.id === size.id
+                                    selectedSize[product.id]?.id === size.id
                                         ? 'border-pink-500 bg-pink-100 text-pink-800'
                                         : 'border-gray-300 bg-white text-gray-800 hover:border-pink-500'
                                 } ${size.stock === 0 ? 'cursor-not-allowed bg-gray-200 text-gray-400' : 'cursor-pointer'}`}
@@ -89,19 +91,21 @@ export default function ProductCards() {
                     <button
                         className="mt-4 rounded-md bg-[#FF39B7] px-6 py-2 text-white shadow transition hover:bg-pink-600"
                         onClick={() => {
-                            if (!selectedSize) {
+                            const size = selectedSize[product.id];
+
+                            if (!size) {
                                 alert('Veuillez sélectionner une taille.');
                                 return;
                             }
 
                             const productToAdd = {
                                 ...product,
-                                selectedSize: selectedSize.name,
+                                selectedSize: size.name,
                                 quantity: 1,
                             };
 
                             addToCart(productToAdd);
-                            alert(`Produit ajouté au panier !\nTaille : ${selectedSize.name}`);
+                            alert(`Produit ajouté au panier !\nTaille : ${size.name}`);
                             console.log('Ajouté au panier:', productToAdd);
                         }}
                     >
@@ -112,4 +116,3 @@ export default function ProductCards() {
         </div>
     );
 }
-// }
