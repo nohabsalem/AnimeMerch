@@ -1,9 +1,11 @@
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import bin from '../../assets/img/bin.svg';
+import CartImg from '../../assets/img/sad-cart.png';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import useCart from './cart';
+
 export default function Cart() {
     const { cart, removeFromCart, clearCart } = useCart();
     console.log('CART', cart);
@@ -17,7 +19,13 @@ export default function Cart() {
                 <h1 className="mb-4 text-2xl font-bold">Votre panier : </h1>
 
                 {cart.length === 0 ? (
-                    <p>Votre panier est vide.</p>
+                    <>
+                        <p>Votre panier est vide.</p>
+                        <img src={CartImg} alt="Panier vide" className="mx-auto mt-4 h-40 w-40 object-cover" />
+                        <button className="mx-auto mt-4 block cursor-pointer rounded-md bg-[#FF39B7] px-4 py-2 text-white">
+                            <Link href="/products">Retourner à la boutique</Link>
+                        </button>
+                    </>
                 ) : (
                     <div className="flex flex-col gap-4 md:flex-row">
                         <div className="flex-auto md:flex-2/3">
