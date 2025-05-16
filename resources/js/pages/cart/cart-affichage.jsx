@@ -1,4 +1,5 @@
 import { Link } from '@inertiajs/react';
+import { useState } from 'react';
 import bin from '../../assets/img/bin.svg';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
@@ -6,6 +7,8 @@ import useCart from './cart';
 export default function Cart() {
     const { cart, removeFromCart, clearCart } = useCart();
     console.log('CART', cart);
+    const [selectedSize, setSelectedSize] = useState(null);
+
     return (
         <div className="flex min-h-screen flex-col">
             <Header />
@@ -29,32 +32,9 @@ export default function Cart() {
                                                 <div>
                                                     <strong>{item.name}</strong>
                                                     <p>Prix : {item.price} €</p>
-
-                                                    {/* <div className="mt-2 flex items-center">
-                                                        <span>Taille :</span>
-                                                        <select className="ml-2 rounded border">
-                                                            {item.sizes?.map((size) => (
-                                                                <option key={size.id} value={size.name}>
-                                                                    {size.name}
-                                                                </option>
-                                                            ))}
-                                                        </select>
-                                                    </div> */}
-
-                                                    <div className="mt-2 flex flex-wrap items-center">
-                                                        <span>Taille :</span>
-                                                        <select className="ml-2 rounded border">
-                                                            {item.sizes?.map((size) => (
-                                                                <option
-                                                                    key={size.id}
-                                                                    value={size.name}
-                                                                    disabled={size.stock === 0}
-                                                                    defaultValue={item.selectedSize === size.name}
-                                                                >
-                                                                    {size.name} {size.stock === 0 ? '(hors stock)' : ''}
-                                                                </option>
-                                                            ))}
-                                                        </select>
+                                                    <div>
+                                                        <span>Taille : </span>
+                                                        <span className="font-bold">{item.selectedSize}</span>
                                                     </div>
                                                 </div>
                                                 <button className="cursor-pointer" onClick={() => removeFromCart(index)}>
