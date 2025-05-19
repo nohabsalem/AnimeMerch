@@ -35,25 +35,23 @@ export default function OurValues() {
                     <div className="embla" ref={emblaRef}>
                         <div className="embla__container">
                             <div className="embla__slide">
-                                <img src={MeganStand} alt="Mannequin 1" />
+                                <img src={MeganStand} alt="Megan en tenue de Trish Una avec le stand Spice Girl." />
                             </div>
                             <div className="embla__slide">
-                                <img src={MeganTrish} alt="Mannequin 2" />
+                                <img src={MeganTrish} alt="Megan en tenue de Trish Una." />
                             </div>
                             <div className="embla__slide">
-                                <img src={MeganJolyne} alt="Mannequin 3" />
+                                <img src={MeganJolyne} alt="Megan en  tenue Jolyne Kujo." />
                             </div>
                             <div className="embla__slide">
-                                <img src={MeganBruno} alt="Mannequin 4" />
+                                <img src={MeganBruno} alt="Megan en tenue de Bruno Bucciarati pour les anime CrunchyRoll Awards." />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="flex w-1/2 flex-col justify-center bg-white p-8">
-                    <h2 className="mb-4 text-2xl font-bold">Titre accrocheur</h2>
-                    <p className="text-gray-700">
-                        Voici un petit paragraphe de texte à côté de l’image. Tu peux ajouter des boutons, des listes ou ce que tu veux ici.
-                    </p>
+                    <h2 className="mb-4 text-lg font-bold">Titre accrocheur</h2>
+                    <p>Voici un petit paragraphe de texte à côté de l’image. Tu peux ajouter des boutons, des listes ou ce que tu veux ici.</p>
                 </div>
             </main>
         </>
