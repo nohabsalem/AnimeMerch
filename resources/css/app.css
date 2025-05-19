@@ -162,3 +162,23 @@
         color: grey;
     }
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla__slide img {
+  width: 100%;
+  max-width: 300px;     /* Taille max de l’image */
+  height: auto;         /* Conserve le ratio de l’image */
+  object-fit: contain;  /* Affiche l’image en entier, sans la couper */
+  display: block;
+  margin: 0 auto;       /* Centre l’image horizontalement */
+}
