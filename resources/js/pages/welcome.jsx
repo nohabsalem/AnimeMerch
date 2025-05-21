@@ -5,8 +5,7 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 import ProductCards from './products/cards';
 
-import OurValues from '../components/landing/our-values';
-
+import Carrousel from '../components/landing/carrousel';
 export default function Welcome({ phpVersion }) {
     return (
         <>
@@ -28,7 +27,7 @@ export default function Welcome({ phpVersion }) {
                     <Link href="/products">Shopper</Link>
                 </button>
                 <ProductCards />
-                <OurValues />
+                <Carrousel />
             </main>
 
             <Footer />
