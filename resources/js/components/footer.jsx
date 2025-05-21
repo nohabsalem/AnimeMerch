@@ -1,22 +1,91 @@
-import { Link } from '@inertiajs/react';
+import logo from '../assets/img/jojo-logo.png';
+const navigation = {
+    solutions: [
+        { name: 'Marketing', href: '' },
+        { name: 'Analytics', href: '' },
+        { name: 'Automation', href: '' },
+        { name: 'Commerce', href: '' },
+        { name: 'Insights', href: '' },
+    ],
+    support: [
+        { name: 'Submit ticket', href: '' },
+        { name: 'Documentation', href: '' },
+        { name: 'Guides', href: '' },
+    ],
+    company: [
+        { name: 'About', href: '' },
+        { name: 'Blog', href: '' },
+        { name: 'Jobs', href: '' },
+        { name: 'Press', href: '' },
+    ],
+    legal: [
+        { name: 'Politique de Confidentialité', href: '/privacy-policy' },
+        { name: 'Conditions de Vente', href: '/terms-of-sale' },
+        { name: 'License', href: '' },
+    ],
+};
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#6C3989] px-6 py-5 text-white">
-            <div className="flex items-center justify-center gap-4">
-                <Link href="/" className="mb-2 text-sm hover:underline sm:mb-0">
-                    Accueil
-                </Link>
-                <Link href="/about-us" className="mb-2 text-sm hover:underline sm:mb-0">
-                    À propos
-                </Link>
-                <Link href="/privacy-policy" className="mb-2 text-sm hover:underline sm:mb-0">
-                    Politique de Confidentialité
-                </Link>
-                <Link href="/terms-of-sale" className="mb-2 text-sm hover:underline sm:mb-0">
-                    CGV
-                </Link>
-                <p className="text-sm">© 2025 AnimeMerch. Tous droits réservés.</p>
+        <footer className="bg-[#6C3989]">
+            <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
+                <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+                    <img alt="Company name" src={logo} className="h-9" />
+                    <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+                        <div className="md:grid md:grid-cols-2 md:gap-8">
+                            <div>
+                                <h3 className="text-md text-sm/6 font-semibold text-white">Solutions</h3>
+                                <ul role="list" className="mt-6 space-y-4">
+                                    {navigation.solutions.map((item) => (
+                                        <li key={item.name}>
+                                            <a href={item.href} className="text-sm/6 text-white">
+                                                {item.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="mt-10 md:mt-0">
+                                <h3 className="text-md text-sm/6 font-semibold text-white">Support</h3>
+                                <ul role="list" className="mt-6 space-y-4">
+                                    {navigation.support.map((item) => (
+                                        <li key={item.name}>
+                                            <a href={item.href} className="text-md text-sm/6 text-white hover:text-white">
+                                                {item.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="md:grid md:grid-cols-2 md:gap-8">
+                            <div>
+                                <h3 className="text-md text-sm/6 font-semibold text-white">Company</h3>
+                                <ul role="list" className="mt-6 space-y-4">
+                                    {navigation.company.map((item) => (
+                                        <li key={item.name}>
+                                            <a href={item.href} className="text-md text-sm/6 text-white hover:text-white">
+                                                {item.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="mt-10 md:mt-0">
+                                <h3 className="text-md text-sm/6 font-semibold text-white">Legal</h3>
+                                <ul role="list" className="mt-6 space-y-4">
+                                    {navigation.legal.map((item) => (
+                                        <li key={item.name}>
+                                            <a href={item.href} className="text-md text-sm/6 text-white hover:text-white">
+                                                {item.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </footer>
     );
