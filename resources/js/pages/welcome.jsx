@@ -5,6 +5,7 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 import ProductCards from './products/cards';
 
+import Carrousel from '../components/landing/carrousel';
 export default function Welcome({ phpVersion }) {
     return (
         <>
@@ -13,7 +14,6 @@ export default function Welcome({ phpVersion }) {
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
             <Header />
-            {/* <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl"> */}
 
             <div className="flex w-full items-center justify-center">
                 <img src={Banner} className="max-h-[350px] w-full object-cover" alt="Bannière" />
@@ -27,6 +27,7 @@ export default function Welcome({ phpVersion }) {
                     <Link href="/products">Shopper</Link>
                 </button>
                 <ProductCards />
+                <Carrousel />
             </main>
 
             <Footer />
