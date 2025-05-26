@@ -1,17 +1,18 @@
-import { Link } from "@inertiajs/react"
+import JojoLion from '@/assets/img/jojolion.png';
+import { Link } from '@inertiajs/react';
 
 export default function NotFound() {
     return (
         <>
-            <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-                <h1 className="text-6xl font-bold text-gray-800">Oups ! Cette page n'existe pas.</h1>
-                <p className="mt-4 text-lg text-gray-600">Vous pouvez toujours vous rendre à l'accueil.</p>
-                <Link
-                    href="/"
-                    className="mt-6 px-4 py-2 bg-pink-500 text-white rounded"
-                >
-                    Go to Home
-                </Link>
+            <div
+                className="flex min-h-screen flex-col items-center justify-center bg-cover bg-center"
+                style={{ backgroundImage: `url(${JojoLion})` }}
+            >
+                <h1 className="text-6xl font-bold text-white drop-shadow-lg">Oups ! Cette page n'existe pas.</h1>
+                <p className="mt-4 text-lg text-white drop-shadow">Vous pouvez toujours vous rendre à l'accueil.</p>
+                <button className="mt-4 rounded-xl bg-[#FF39B7] px-10 py-2 text-white">
+                    <Link href="/products">Accueil</Link>
+                </button>
             </div>
         </>
     );
