@@ -11,7 +11,9 @@ export default function AppLogo() {
                 {/* <AppLogoIcon className="size-5 fill-current text-white dark:text-black" /> */}
             </div>
             <div className="ml-1 grid flex-1 text-left text-sm text-[#6C3989]">
-                <span className="mb-0.5 truncate leading-none font-semibold">Anime Merch</span>
+                <Link href="/" className="text-[#6C3989] hover:text-[#6C3989]">
+                    <span className="mb-0.5 truncate leading-none font-semibold">Anime Merch</span>
+                </Link>
             </div>
         </>
     );
