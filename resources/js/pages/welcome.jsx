@@ -28,10 +28,10 @@ export default function Welcome({ phpVersion }) {
             </div>
 
             <main className="flex flex-row items-center justify-center py-8">
-                <div className="flex w-full justify-center px-2 md:w-1/2 md:px-4">
+                <div className="flex w-full justify-center md:w-1/2">
                     <img src={Jotaro} alt="Jotaro Kujo" className="" />
                 </div>
-                <div className="flex w-full justify-center px-2 md:w-1/2 md:px-4">
+                <div className="flex w-full justify-center md:w-1/2">
                     <img src={Johnny} alt="Johnny Joestar" className="" />
                 </div>
             </main>
