@@ -61,6 +61,15 @@ Route::get('/about-us', function () {
     return Inertia::render('policies/about');
 })->name('about');
 
+Route::get('/faq', function () {
+    return Inertia::render('policies/faq');
+})->name('faq');
+
+
+Route::get('/help', function () {
+    return Inertia::render('policies/help');
+})->name('help');
+
 // Payment Pages
 Route::get('/payment', function () {
     return Inertia::render('commands/payment');
