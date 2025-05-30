@@ -65,10 +65,13 @@ Route::get('/faq', function () {
     return Inertia::render('policies/faq');
 })->name('faq');
 
-
 Route::get('/help', function () {
     return Inertia::render('policies/help');
 })->name('help');
+
+Route::get('/contact', function () {
+    return Inertia::render('policies/contact');
+})->name('contact');
 
 // Payment Pages
 Route::get('/payment', function () {
