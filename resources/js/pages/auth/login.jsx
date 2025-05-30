@@ -9,8 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import AuthLayout from '@/layouts/auth-layout';
 
-import Wallpaper from "../../assets/img/jolyne-wallpaper.jpg";
-import Footer from "@/components/footer";
+import Footer from '@/components/footer';
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
@@ -28,8 +27,8 @@ export default function Login({ status, canResetPassword }) {
         <>
             <AuthLayout title="Connectez-vous à votre compte" description="Entrez vos identifiants pour vous connecter.">
                 <Head title="Log in" />
-                <div className="bg-[url('../../assets/img/jolyne-wallpaper.jpg')] bg-cover bg-center h-64 w-full">
-                    <form className="flex flex-col gap-6 border-2 border-[#6C3989] p-6 rounded-2xl" onSubmit={submit}>
+                <div className="h-64 w-full bg-[url('../../assets/img/jolyne-wallpaper.jpg')] bg-cover bg-center">
+                    <form className="flex flex-col gap-6 rounded-2xl border-2 border-[#6C3989] p-6" onSubmit={submit}>
                         <div className="grid gap-6">
                             <div className="grid gap-2">
                                 <Label htmlFor="email">Adresse mail :</Label>
@@ -51,7 +50,7 @@ export default function Login({ status, canResetPassword }) {
                                 <div className="flex items-center">
                                     <Label htmlFor="password">Mot de passe :</Label>
                                     {canResetPassword && (
-                                        <TextLink href={route('password.request')} className="ml-auto text-sm text-[#6C3989]" tabIndex={5} >
+                                        <TextLink href={route('password.request')} className="ml-auto text-sm text-[#6C3989]" tabIndex={5}>
                                             Mot de passe oublié ?
                                         </TextLink>
                                     )}
@@ -76,7 +75,7 @@ export default function Login({ status, canResetPassword }) {
                                     checked={data.remember}
                                     onClick={() => setData('remember', !data.remember)}
                                     tabIndex={3}
-                                    className="data-[state=checked]:bg-[#6C3989] data-[state=checked]:border-[#]"
+                                    className="data-[state=checked]:border-[#] data-[state=checked]:bg-[#6C3989]"
                                 />
                                 <Label htmlFor="remember">Se souvenir de moi</Label>
                             </div>
@@ -99,9 +98,7 @@ export default function Login({ status, canResetPassword }) {
                 {status && <div className="mb-4 text-center text-sm font-medium text-green-600">{status}</div>}
             </AuthLayout>
 
-            < Footer />
+            <Footer />
         </>
-
-
     );
 }
