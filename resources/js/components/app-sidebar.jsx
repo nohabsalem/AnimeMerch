@@ -15,7 +15,7 @@ const mainNavItems = [
 
     {
         title: 'Compte',
-        url: '/profile',
+        url: '/settings/profile',
         icon: UserIcon,
     },
 
