@@ -1,3 +1,4 @@
+import Footer from '../../components/footer';
 export default function Contact() {
     return (
         <>
@@ -60,6 +61,7 @@ export default function Contact() {
                     </div>
                 </div>
             </main>
+            <Footer />
         </>
     );
 }
