@@ -11,8 +11,9 @@ const breadcrumbs = [
 ];
 
 const stats = [
-    { name: 'dada', icon: BuildingStorefrontIcon, current: false },
-    { name: 'daddy', icon: BuildingStorefrontIcon, current: false },
+    { name: 'Total commandes :', number: 45, icon: ShoppingCartIcon, current: false },
+    { name: 'Utilisateurs :', number: 32, icon: UserIcon, current: false },
+    { name: 'Total produits :', number: 88, BuildingStorefrontIcon, current: false },
 ];
 
 export default function AdminDashboard() {
@@ -20,26 +21,23 @@ export default function AdminDashboard() {
         <>
             <AppLayout breadcrumbs={breadcrumbs}>
                 <Head title="Dashboard" />
-                <p>Admin Dashboard</p>
 
-                <div className="flex justify-center gap-2 border-4 border-red-700 px-1 py-4 font-medium">
-                    {stats.map((item) => (
-                        <div key={item.name} className="border-2 border-blue-300 px-2 py-1">
-                            <span className="truncate">{item.name}</span>
-                        </div>
-                    ))}
+                <div className="flex flex-col gap-4 rounded-xl p-4">
+                    <h1 className="text-2xl font-medium text-[#6C3989]">Admin Dashboard :</h1>
+
+                    {/* Mes Stats */}
+                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                        {stats.map((item) => (
+                            <div key={item.name} className="rounded-2xl border-2 border-[#FF39B7] bg-white p-4 shadow-md">
+                                <span className="text-md block truncate font-medium text-[#6C3989]">{item.name}</span>
+                                <span className="mt-2 block text-3xl font-bold text-[#FF39B7]">{item.number}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                <ul role="list" className="flex flex-1 flex-col gap-y-7">
-                    <li className="-mx-6 mt-auto">
-                        <Link href="#" className="flex items-center gap-x-4 px-6 py-3 text-sm/6 text-white">
-                            <span className="sr-only">Your profile</span>
-                        </Link>
-                    </li>
-                </ul>
-
                 <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
-                    <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+                    <div className="grid auto-rows-min gap-4 border-2 border-[#6C3989] p-4 md:grid-cols-3">
                         {/* Commandes */}
                         <div className="relative flex items-center overflow-hidden rounded-xl border-2 border-[#6C3989] p-4">
                             <div className="flex-shrink-0">
@@ -78,18 +76,18 @@ export default function AdminDashboard() {
                                 <p className="text-sm text-gray-600">Modifier les utilisateurs et les préférences de livraison des commandes.</p>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Produits */}
-                    <div className="relative flex items-center overflow-hidden rounded-xl border-2 border-[#6C3989] p-4">
-                        <div className="flex-shrink-0">
-                            <UserIcon className="h-12 w-12 text-[#6C3989]" />
-                        </div>
-                        <div className="ml-4">
-                            <Link href="/products-view" className="cursor-pointer text-lg font-semibold">
-                                Produits
-                            </Link>
-                            <p className="text-sm text-gray-600">Voir les produits disponibles sur la plateforme.</p>
+                        {/* Produits */}
+                        <div className="relative flex items-center overflow-hidden rounded-xl border-2 border-[#6C3989] p-4">
+                            <div className="flex-shrink-0">
+                                <UserIcon className="h-12 w-12 text-[#6C3989]" />
+                            </div>
+                            <div className="ml-4">
+                                <Link href="/products-view" className="cursor-pointer text-lg font-semibold">
+                                    Produits
+                                </Link>
+                                <p className="text-sm text-gray-600">Voir les produits disponibles sur la plateforme.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
