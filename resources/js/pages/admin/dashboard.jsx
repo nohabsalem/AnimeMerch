@@ -43,7 +43,7 @@ export default function AdminDashboard() {
                                     <Link href="/products-view" className="text-md block font-semibold text-[#6c3989]">
                                         Produits
                                     </Link>
-                                    <p className="text-xs text-gray-600">Consulter la liste les produits.</p>
+                                    <p className="text-sm text-gray-600">Consulter la liste les produits.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-3 rounded-lg border border-[#F3F4F6] bg-white p-3 shadow-sm">
@@ -54,7 +54,7 @@ export default function AdminDashboard() {
                                     <Link href="/products-view" className="text-md block font-semibold text-[#6c3989]">
                                         Commandes
                                     </Link>
-                                    <p className="text-xs text-gray-600">Accéder aux commandes des utilisateurs.</p>
+                                    <p className="text-sm text-gray-600">Accéder aux commandes des utilisateurs.</p>
                                 </div>
                             </div>
 
@@ -66,7 +66,7 @@ export default function AdminDashboard() {
                                     <Link href="/users-list" className="text-md block font-semibold text-[#6c3989]">
                                         Inventaire
                                     </Link>
-                                    <p className="text-xs text-gray-600"> Voir et gérer les produits.</p>
+                                    <p className="text-sm text-gray-600"> Voir et gérer les produits.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-3 rounded-lg border border-[#F3F4F6] bg-white p-3 shadow-sm">
@@ -77,9 +77,10 @@ export default function AdminDashboard() {
                                     <Link href="/users-list" className="text-md block font-semibold text-[#6c3989]">
                                         Utilisateurs
                                     </Link>
-                                    <p className="text-xs text-gray-600"> Voir et gérer les utilisateurs.</p>
+                                    <p className="text-sm text-gray-600"> Voir et gérer les utilisateurs.</p>
                                 </div>
                             </div>
+                            <p>commit p</p>
                         </div>
                     </div>
                 </div>
