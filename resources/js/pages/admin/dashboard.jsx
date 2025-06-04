@@ -2,7 +2,6 @@ import AppLayout from '@/layouts/app-layout';
 import { BuildingStorefrontIcon, HomeIcon, ShoppingCartIcon, UserIcon } from '@heroicons/react/24/solid';
 import { Head, Link } from '@inertiajs/react';
 import Footer from '../../components/footer';
-
 const breadcrumbs = [
     {
         title: 'Dashboard',
@@ -28,65 +27,66 @@ export default function AdminDashboard() {
                     {/* Mes Stats */}
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                         {stats.map((item) => (
-                            <div key={item.name} className="rounded-2xl border-2 border-[#FF39B7] bg-white p-4 shadow-md">
+                            <div key={item.name} className="rounded-xl border-2 border-[#FF39B7] bg-white p-4 text-lg shadow-md">
                                 <span className="text-md block truncate font-medium text-[#6C3989]">{item.name}</span>
-                                <span className="mt-2 block text-3xl font-bold text-[#FF39B7]">{item.number}</span>
+                                <span className="mt-2 block text-2xl font-bold text-[#FF39B7]">{item.number}</span>
                             </div>
                         ))}
                     </div>
                 </div>
-
-                <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
-                    <div className="grid auto-rows-min gap-4 border-2 border-[#6C3989] p-4 md:grid-cols-3">
-                        {/* Commandes */}
-                        <div className="relative flex items-center overflow-hidden rounded-xl border-2 border-[#6C3989] p-4">
-                            <div className="flex-shrink-0">
-                                <ShoppingCartIcon className="h-12 w-12 text-[#6C3989]" />
+                {/* Accès rapide */}
+                <div className="mt-6 rounded-xl border border-[#E5E7EB] bg-white p-6">
+                    <h2 className="mb-4 text-lg font-semibold text-gray-900">Accès rapide</h2>
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {/* Produits */}
+                        <div className="flex items-start gap-4 rounded-lg border border-[#F3F4F6] bg-white p-4 shadow-sm">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#E6D8F4]">
+                                <BuildingStorefrontIcon className="h-5 w-5 text-[#6C3989]" />
                             </div>
-                            <div className="ml-4">
-                                <Link href="/commandes" className="cursor-pointer text-lg font-semibold">
-                                    Historique des commandes
+                            <div>
+                                <Link href="/products-view" className="block text-sm font-semibold text-gray-900">
+                                    Produits
                                 </Link>
-                                <p className="text-sm text-gray-600">Consulter l'historique de commande des utilisateurs.</p>
+                                <p className="text-xs text-gray-600">Voir les produits disponibles sur la plateforme.</p>
+                            </div>
+                        </div>
+
+                        {/* Commandes */}
+                        <div className="flex items-start gap-4 rounded-lg border border-[#F3F4F6] bg-white p-4 shadow-sm">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#E6D8F4]">
+                                <ShoppingCartIcon className="h-5 w-5 text-[#6C3989]" />
+                            </div>
+                            <div>
+                                <Link href="/commandes" className="block text-sm font-semibold text-gray-900">
+                                    Commandes
+                                </Link>
+                                <p className="text-xs text-gray-600">Gérer les commandes des utilisateurs.</p>
                             </div>
                         </div>
 
                         {/* Utilisateurs */}
-                        <div className="relative flex items-center overflow-hidden rounded-xl border-2 border-[#6C3989] p-4">
-                            <div className="flex-shrink-0">
-                                <UserIcon className="h-12 w-12 text-[#6C3989]" />
+                        <div className="flex items-start gap-4 rounded-lg border border-[#F3F4F6] bg-white p-4 shadow-sm">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#E6D8F4]">
+                                <UserIcon className="h-5 w-5 text-[#6C3989]" />
                             </div>
-                            <div className="ml-4">
-                                <Link href="/cordonnées" className="cursor-pointer text-lg font-semibold">
+                            <div>
+                                <Link href="/cordonnées" className="block text-sm font-semibold text-gray-900">
                                     Utilisateurs
                                 </Link>
-                                <p className="text-sm text-gray-600">Consulter et gérer les utilisateurs.</p>
+                                <p className="text-xs text-gray-600">Consulter et gérer les utilisateurs.</p>
                             </div>
                         </div>
 
-                        {/* Préférences de livraison */}
-                        <div className="relative flex items-center overflow-hidden rounded-xl border-2 border-[#6C3989] p-4">
-                            <div className="flex-shrink-0">
-                                <HomeIcon className="h-12 w-12 text-[#6C3989]" />
+                        {/* Paiements */}
+                        <div className="flex items-start gap-4 rounded-lg border border-[#F3F4F6] bg-white p-4 shadow-sm">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#E6D8F4]">
+                                <HomeIcon className="h-5 w-5 text-[#6C3989]" />
                             </div>
-                            <div className="ml-4">
-                                <Link href="/coordonnees" className="cursor-pointer text-lg font-semibold">
-                                    Préférences de livraison
+                            <div>
+                                <Link href="/paiements" className="block text-sm font-semibold text-gray-900">
+                                    Paiements
                                 </Link>
-                                <p className="text-sm text-gray-600">Modifier les utilisateurs et les préférences de livraison des commandes.</p>
-                            </div>
-                        </div>
-
-                        {/* Produits */}
-                        <div className="relative flex items-center overflow-hidden rounded-xl border-2 border-[#6C3989] p-4">
-                            <div className="flex-shrink-0">
-                                <UserIcon className="h-12 w-12 text-[#6C3989]" />
-                            </div>
-                            <div className="ml-4">
-                                <Link href="/products-view" className="cursor-pointer text-lg font-semibold">
-                                    Produits
-                                </Link>
-                                <p className="text-sm text-gray-600">Voir les produits disponibles sur la plateforme.</p>
+                                <p className="text-xs text-gray-600">Suivre et gérer les paiements clients.</p>
                             </div>
                         </div>
                     </div>
