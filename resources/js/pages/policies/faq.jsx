@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Jojos from '../../assets/img/jojo-faq.jpg';
+import JotaroBg from '../../assets/img/kujo-bg.jpg';
 import Footer from '../../components/footer';
 
 export default function FAQ() {
@@ -30,30 +30,37 @@ export default function FAQ() {
 
     return (
         <>
-            <main className="flex min-h-screen items-center justify-center">
-                <div className="flex w-full max-w-5xl flex-col overflow-hidden rounded border-2 border-[#6C3989] bg-white shadow-md md:flex-row">
-                    <div className="h-64 w-full md:h-auto md:w-1/2">
-                        <img src={Jojos} alt="Jojo's magazine" className="h-full w-full object-cover" />
-                    </div>
+            <div
+                className="flex min-h-screen w-full items-center justify-center bg-cover bg-center"
+                style={{ backgroundImage: `url(${JotaroBg})` }}
+                role="img"
+                aria-label="Image de fond Jotaro Kujo"
+            >
+                <main className="flex min-h-screen items-center justify-center">
+                    <section className="w-full max-w-4xl rounded-2xl border-2 border-[#6C3989] bg-white/95 p-8 shadow-lg">
+                        <header className="mb-8 text-center">
+                            <h1 className="text-3xl font-extrabold text-[#6C3989]">Foire Aux Questions</h1>
+                            <p className="mt-2 text-sm text-gray-600">
+                                Retrouvez ici les réponses aux questions les plus fréquentes. Si vous ne trouvez pas votre bonheur, contactez-nous !
+                            </p>
+                        </header>
 
-                    <div className="w-full p-6 md:w-1/2">
-                        <h2 className="mb-6 text-2xl font-semibold text-[#6C3989]">Foire Aux Questions</h2>
-                        <div className="cursor-pointer space-y-4">
+                        <div className="space-y-4">
                             {faqs.map((faq, index) => (
-                                <div key={index} className="border-b pb-2">
+                                <div key={index} className="rounded-lg border border-[#6C3989] bg-white shadow-sm transition hover:shadow-md">
                                     <button
                                         onClick={() => toggleIndex(index)}
-                                        className="w-full text-left text-lg font-medium text-[#6C3989] focus:outline-none"
+                                        className="w-full px-6 py-4 text-left text-lg font-medium text-[#6C3989] focus:outline-none"
                                     >
                                         {faq.question}
                                     </button>
-                                    {openIndex === index && <p className="mt-2 text-sm text-gray-700">{faq.answer}</p>}
+                                    {openIndex === index && <div className="px-6 pb-4 text-sm text-gray-700">{faq.answer}</div>}
                                 </div>
                             ))}
                         </div>
-                    </div>
-                </div>
-            </main>
+                    </section>
+                </main>
+            </div>
             <Footer />
         </>
     );
