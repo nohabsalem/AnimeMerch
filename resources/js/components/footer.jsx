@@ -6,7 +6,10 @@ const navigation = {
         { name: 'Conditions de Vente', href: '/terms-of-sale' },
     ],
     Support: [{ name: 'Nous contacter', href: '' }],
-    Entreprise: [{ name: 'À propos de nous', href: '/about-us' }],
+    Entreprise: [
+        { name: 'À propos de nous', href: '/about-us' },
+        { name: 'Foire aux Questions', href: '/faq' },
+    ],
 };
 
 export default function Footer() {
