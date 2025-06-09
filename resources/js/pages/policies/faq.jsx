@@ -1,7 +1,7 @@
+import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import JotaroBg from '../../assets/img/kujo-bg.jpg';
 import Footer from '../../components/footer';
-
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -40,9 +40,11 @@ export default function FAQ() {
                     <section className="w-full max-w-4xl rounded-2xl border-2 border-[#6C3989] bg-white/95 p-8 shadow-lg">
                         <header className="mb-8 text-center">
                             <h1 className="text-3xl font-extrabold text-[#6C3989]">Foire Aux Questions</h1>
-                            <p className="mt-2 text-sm text-gray-600">
-                                Retrouvez ici les réponses aux questions les plus fréquentes. Si vous ne trouvez pas votre bonheur, contactez-nous !
-                            </p>
+                            <p className="mt-2 text-sm text-gray-600">Retrouvez ici les réponses aux questions les plus fréquentes.</p>
+                            <Link href="/contact" className="mt-2 text-sm text-gray-600">
+                                Si vous ne trouvez pas votre bonheur,
+                                <u className="text-[#6C3989]"> contactez-nous !</u>
+                            </Link>
                         </header>
 
                         <div className="space-y-4">
