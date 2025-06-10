@@ -58,7 +58,7 @@ export default function AdminDashboard() {
                                     <p className="text-sm text-gray-600">Accéder aux commandes des utilisateurs.</p>
                                 </div>
                             </div>
-                            co
+
                             <div className="flex items-start gap-3 rounded-lg border border-[#F3F4F6] bg-white p-3 shadow-sm">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#E6D8F4]">
                                     <BuildingStorefrontIcon className="h-4 w-4 text-[#6C3989]" />
