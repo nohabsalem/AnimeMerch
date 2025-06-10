@@ -76,13 +76,21 @@ export default function CommandList() {
                                         <td className="px-6 py-4">{cmd.total} €</td>
                                         <td className="px-6 py-4">{cmd.date}</td>
                                         <td className="px-6 py-4">{cmd.status}</td>
-                                        <td className="flex items-center space-x-2 px-6 py-4">
-                                            <EyeIcon className="text-gray h-6 w-6 cursor-pointer" onClick={() => alert('Consulter la commande')} />
-                                            <PenIcon className="h-6 w-6 cursor-pointer" onClick={() => alert('Modifier la commande')} />
-                                            <TrashIcon
-                                                className="h-6 w-6 cursor-pointer text-red-600"
-                                                onClick={() => alert('Supprimer la commande')}
-                                            />
+                                        <td className="px-6 py-4">
+                                            <div className="mt-3 flex justify-end space-x-2">
+                                                <EyeIcon
+                                                    className="text-gray h-5 w-5 cursor-pointer text-green-600"
+                                                    onClick={() => alert('Consulter la commande')}
+                                                />
+                                                <PenIcon
+                                                    className="h-5 w-5 cursor-pointer text-blue-600"
+                                                    onClick={() => alert('Modifier la commande')}
+                                                />
+                                                <TrashIcon
+                                                    className="h-5 w-5 cursor-pointer text-red-600"
+                                                    onClick={() => alert('Supprimer la commande')}
+                                                />
+                                            </div>
                                         </td>
                                     </tr>
                                 ))}
@@ -102,9 +110,9 @@ export default function CommandList() {
                                     <span
                                         className={`rounded-full px-2 py-1 text-xs ${
                                             cmd.status === 'En attente'
-                                                ? 'bg-yellow-100 text-yellow-800'
+                                                ? 'bg-blue-100 text-blue-800'
                                                 : cmd.status === 'En cours'
-                                                  ? 'bg-blue-100 text-blue-800'
+                                                  ? 'bg-yellow-200 text-yellow-800'
                                                   : 'bg-green-100 text-green-800'
                                         }`}
                                     >
@@ -124,8 +132,11 @@ export default function CommandList() {
                                 </div>
 
                                 <div className="mt-3 flex justify-end space-x-2">
-                                    <EyeIcon className="text-gray h-5 w-5 cursor-pointer" onClick={() => alert('Consulter la commande')} />
-                                    <PenIcon className="h-5 w-5 cursor-pointer" onClick={() => alert('Modifier la commande')} />
+                                    <EyeIcon
+                                        className="text-gray h-5 w-5 cursor-pointer text-green-600"
+                                        onClick={() => alert('Consulter la commande')}
+                                    />
+                                    <PenIcon className="h-5 w-5 cursor-pointer text-blue-600" onClick={() => alert('Modifier la commande')} />
                                     <TrashIcon className="h-5 w-5 cursor-pointer text-red-600" onClick={() => alert('Supprimer la commande')} />
                                 </div>
                             </div>
