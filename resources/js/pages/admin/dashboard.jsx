@@ -21,7 +21,11 @@ export default function AdminDashboard() {
                 <div className="flex flex-col gap-6 rounded-xl p-6">
                     <h1 className="text-2xl font-medium text-[#6C3989]">Admin Dashboard :</h1>
                     <p className="text-sm text-gray-500">Vue d’ensemble de l’activité sur la plateforme.</p>
-
+                    <div className="bg-green-300">
+                        <h1 className="text-2xl font-medium">PAGES CRUD :</h1>
+                        <h1>Ajouter searchbar</h1>
+                        <h1>Ajouter composant filtres/tri</h1>
+                    </div>
                     {/* Statistiques */}
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                         {stats.map((item) => (
