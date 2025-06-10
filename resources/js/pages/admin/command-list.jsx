@@ -114,7 +114,7 @@ export default function CommandList() {
 
                                 <div className="mt-3 grid grid-cols-2 gap-2 text-sm">
                                     <div>
-                                        <p className="text-gray-500">Produits</p>
+                                        <p className="text-gray-500">Produit(s)</p>
                                         <p>{cmd.products}</p>
                                     </div>
                                     <div>
