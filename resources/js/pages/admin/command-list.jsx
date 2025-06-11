@@ -2,8 +2,9 @@ import AppLayout from '@/layouts/app-layout';
 import { EyeIcon } from '@heroicons/react/24/solid';
 import { Head } from '@inertiajs/react';
 import { PenIcon, TrashIcon } from 'lucide-react';
+import AdminSort from '../../components/admin/sort';
 import Footer from '../../components/footer';
-
+import Searchbar from '../../components/searchbar';
 export default function CommandList() {
     const breadcrumbs = [
         {
@@ -54,8 +55,10 @@ export default function CommandList() {
                     <h1 className="text-2xl font-medium text-[#6C3989]">Liste des commandes</h1>
                     <p className="text-sm text-gray-500">Gérez les commandes de votre application.</p>
                     <br />
+                    <Searchbar className="mb-4" />
+                    <AdminSort />
+                    {/* <div className="top-0 right-0 left-0 z-10 flex items-center justify-between p-4 shadow"></div> */}
 
-                    {/* Version desktop - Tableau */}
                     <div className="hidden overflow-x-auto shadow-md sm:rounded-lg md:block">
                         <table className="w-full text-left text-sm">
                             <thead className="bg-[#FF39B7] text-xs text-white uppercase">
@@ -76,7 +79,7 @@ export default function CommandList() {
                                         <td className="px-6 py-4">{cmd.total} €</td>
                                         <td className="px-6 py-4">{cmd.date}</td>
                                         <td className="px-6 py-4">{cmd.status}</td>
-                                        <td className="px-6 py-4">
+                                        <td className="justify-center px-6 py-4">
                                             <div className="mt-3 flex justify-end space-x-2">
                                                 <EyeIcon
                                                     className="text-gray h-5 w-5 cursor-pointer text-green-600"
