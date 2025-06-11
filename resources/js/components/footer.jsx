@@ -28,9 +28,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.Mentions.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-md text-sm/6 text-white hover:text-white">
+                                            <Link href={item.href} className="text-md text-sm/6 text-white hover:text-white">
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -42,9 +42,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.Entreprise.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-md text-sm/6 text-white hover:text-white">
+                                            <Link href={item.href} className="text-md text-sm/6 text-white hover:text-white">
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -54,9 +54,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.Support.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-md text-sm/6 text-white hover:text-white">
+                                            <Link href={item.href} className="text-md text-sm/6 text-white hover:text-white">
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
