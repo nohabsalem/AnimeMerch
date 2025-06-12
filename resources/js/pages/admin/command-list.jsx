@@ -55,8 +55,11 @@ export default function CommandList() {
                     <h1 className="text-2xl font-medium text-[#6C3989]">Liste des commandes</h1>
                     <p className="text-sm text-gray-500">Gérez les commandes de votre application.</p>
                     <br />
-                    <Searchbar className="mb-4" />
-                    <AdminSort />
+                    <div className="mb-4 flex items-center justify-between">
+                        <Searchbar />
+                        <AdminSort />
+                    </div>
+
                     {/* <div className="top-0 right-0 left-0 z-10 flex items-center justify-between p-4 shadow"></div> */}
 
                     <div className="hidden overflow-x-auto shadow-md sm:rounded-lg md:block">
@@ -79,7 +82,7 @@ export default function CommandList() {
                                         <td className="px-6 py-4">{cmd.total} €</td>
                                         <td className="px-6 py-4">{cmd.date}</td>
                                         <td className="px-6 py-4">{cmd.status}</td>
-                                        <td className="justify-center px-6 py-4">
+                                        <td className="flex justify-start px-6 py-4">
                                             <div className="mt-3 flex justify-end space-x-2">
                                                 <EyeIcon
                                                     className="text-gray h-5 w-5 cursor-pointer text-green-600"
