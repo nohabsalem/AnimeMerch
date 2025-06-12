@@ -1,7 +1,7 @@
 export default function Searchbar() {
     return (
-        <div className="flex w-full items-center justify-center">
-            <div className="relative w-1/2">
+        <div className="flex items-center justify-center">
+            <div className="relative w-[300px]">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-[#6C3989]">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                         <path
