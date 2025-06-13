@@ -1,5 +1,5 @@
 import AppLayout from '@/layouts/app-layout';
-import { ArchiveBoxArrowDownIcon, EyeIcon } from '@heroicons/react/24/solid';
+import { EyeIcon } from '@heroicons/react/24/solid';
 import { Head } from '@inertiajs/react';
 import { PenIcon, TrashIcon } from 'lucide-react';
 import ProductImage from '../../assets/img/jotaro.svg'; // import SVG
@@ -101,7 +101,6 @@ export default function ProductView() {
                                     <div>
                                         <h3 className="font-medium text-gray-900">{product.name}</h3>
                                         <p className="text-sm text-gray-500">Stock : {product.stock}</p>
-                                        <ArchiveBoxArrowDownIcon className="h-6 w-6 text-[#6C3989]" />
 
                                         <p className="text-sm">{product.price.toFixed(2)} €</p>
                                     </div>
