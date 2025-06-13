@@ -30,12 +30,27 @@ Route::get('/cart', function () {
     return Inertia::render('cart/cart-affichage');
 })->name('cart');
 
-//Admin views
+
+
+//Admin views 
 Route::get('/admin', function () {
     return Inertia::render('admin/dashboard');
 })->name('admin');
 
-//UserViews
+//CRUDS :
+Route::get('/admin/users', function () {
+    return Inertia::render('admin/user-list');
+})->name('admin.users');
+
+Route::get('/admin/commands', function () {
+    return Inertia::render('admin/command-list');
+})->name('admin.users');
+
+Route::get('/admin/products-view', function () {
+    return Inertia::render('admin/product-list');
+})->name('admin.products');
+
+// UserViews
 
 //Products Views
 Route::get('/products/{id}', function ($id) {

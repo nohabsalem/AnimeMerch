@@ -13,15 +13,15 @@ export default function Aide() {
                         <p className="mb-2 text-gray-600">Si vous avez besoin d’assistance, n’hésitez pas à contacter notre équipe de support.</p>
                         <p className="mb-2 text-gray-600">
                             Vous pouvez nous écrire à : <br />
-                            <a href="mailto:animemerch-aide@exemple.com" className="text-blue-600 hover:underline">
+                            <Link href="mailto:animemerch-aide@exemple.com" className="text-blue-600 hover:underline">
                                 <i>Animemerch-aide@exemple.com</i>
-                            </a>
+                            </Link>
                         </p>
                         <p className="mb-2 text-gray-600">
                             Ou visitez notre{' '}
-                            <a href="/faq" className="text-blue-600 hover:underline">
+                            <Link href="/faq" className="text-blue-600 hover:underline">
                                 page FAQ
-                            </a>{' '}
+                            </Link>{' '}
                             pour les questions fréquentes.
                         </p>
                         <p className="mb-1 text-gray-600">Merci pour votre patience !</p>

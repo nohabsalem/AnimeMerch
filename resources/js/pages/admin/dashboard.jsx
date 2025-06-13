@@ -21,7 +21,11 @@ export default function AdminDashboard() {
                 <div className="flex flex-col gap-6 rounded-xl p-6">
                     <h1 className="text-2xl font-medium text-[#6C3989]">Admin Dashboard :</h1>
                     <p className="text-sm text-gray-500">Vue d’ensemble de l’activité sur la plateforme.</p>
-
+                    <div className="bg-green-300">
+                        <h1 className="text-2xl font-medium">PAGES CRUD :</h1>
+                        <h1>Ajouter searchbar</h1>
+                        <h1>Ajouter composant filtres/tri</h1>
+                    </div>
                     {/* Statistiques */}
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                         {stats.map((item) => (
@@ -41,7 +45,7 @@ export default function AdminDashboard() {
                                     <UserIcon className="h-6 w-6 text-[#6C3989]" />
                                 </div>
                                 <div>
-                                    <Link href="/users-list" className="text-md block font-semibold text-[#6c3989]">
+                                    <Link href="/admin/users" className="text-md block font-semibold text-[#6c3989]">
                                         Utilisateurs
                                     </Link>
                                     <p className="text-sm text-gray-600"> Voir et gérer les utilisateurs.</p>
@@ -52,7 +56,7 @@ export default function AdminDashboard() {
                                     <CubeIcon className="h-6 w-6 text-[#6C3989]" />
                                 </div>
                                 <div>
-                                    <Link href="/products-view" className="text-md block font-semibold text-[#6c3989]">
+                                    <Link href="/admin/commands" className="text-md block font-semibold text-[#6c3989]">
                                         Commandes
                                     </Link>
                                     <p className="text-sm text-gray-600">Accéder aux commandes des utilisateurs.</p>
@@ -64,13 +68,12 @@ export default function AdminDashboard() {
                                     <BuildingStorefrontIcon className="h-4 w-4 text-[#6C3989]" />
                                 </div>
                                 <div>
-                                    <Link href="/products-view" className="text-md block font-semibold text-[#6c3989]">
+                                    <Link href="/admin/products-view" className="text-md block font-semibold text-[#6c3989]">
                                         Produits
                                     </Link>
                                     <p className="text-sm text-gray-600">Consulter la liste les produits.</p>
                                 </div>
                             </div>
-
                             <div className="flex items-start gap-3 rounded-lg border border-[#F3F4F6] bg-white p-3 shadow-sm">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#E6D8F4]">
                                     <ArchiveBoxArrowDownIcon className="h-6 w-6 text-[#6C3989]" />

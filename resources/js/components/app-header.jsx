@@ -71,7 +71,7 @@ export function AppHeader({ breadcrumbs = [] }) {
 
                                         <div className="flex flex-col space-y-4">
                                             {rightNavItems.map((item) => (
-                                                <a
+                                                <Link
                                                     key={item.title}
                                                     href={item.url}
                                                     target="_blank"
@@ -80,7 +80,7 @@ export function AppHeader({ breadcrumbs = [] }) {
                                                 >
                                                     {item.icon && <Icon iconNode={item.icon} className="h-5 w-5" />}
                                                     <span>{item.title}</span>
-                                                </a>
+                                                </Link>
                                             ))}
                                         </div>
                                     </div>
@@ -129,7 +129,7 @@ export function AppHeader({ breadcrumbs = [] }) {
                                     <TooltipProvider key={item.title} delayDuration={0}>
                                         <Tooltip>
                                             <TooltipTrigger>
-                                                <a
+                                                <Link
                                                     href={item.url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -137,7 +137,7 @@ export function AppHeader({ breadcrumbs = [] }) {
                                                 >
                                                     <span className="sr-only">{item.title}</span>
                                                     {item.icon && <Icon iconNode={item.icon} className="size-5 opacity-80 group-hover:opacity-100" />}
-                                                </a>
+                                                </Link>
                                             </TooltipTrigger>
                                             <TooltipContent>
                                                 <p>{item.title}</p>
