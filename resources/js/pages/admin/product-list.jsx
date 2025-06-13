@@ -1,5 +1,5 @@
 import AppLayout from '@/layouts/app-layout';
-import { EyeIcon } from '@heroicons/react/24/solid';
+import { ArchiveBoxArrowDownIcon, EyeIcon } from '@heroicons/react/24/solid';
 import { Head } from '@inertiajs/react';
 import { PenIcon, TrashIcon } from 'lucide-react';
 import ProductImage from '../../assets/img/jotaro.svg'; // import SVG
@@ -19,19 +19,19 @@ export default function ProductView() {
         {
             id: 1,
             name: 'Produit 1',
-            description: 'Description du produit 1',
+            stock: '11',
             price: 19.99,
         },
         {
             id: 2,
             name: 'Produit 2',
-            description: 'Description du produit 2',
+            stock: '12',
             price: 29.99,
         },
         {
             id: 3,
             name: 'Produit 3',
-            description: 'Description du produit 3',
+            stock: '13',
             price: 39.99,
         },
     ];
@@ -56,7 +56,7 @@ export default function ProductView() {
                                 <tr>
                                     <th className="px-6 py-3">Image</th>
                                     <th className="px-6 py-3">Nom</th>
-                                    <th className="px-6 py-3">Description</th>
+                                    <th className="px-6 py-3">stock</th>
                                     <th className="px-6 py-3">Prix (€)</th>
                                     <th className="px-6 py-3">Actions</th>
                                 </tr>
@@ -68,7 +68,7 @@ export default function ProductView() {
                                             <img src={ProductImage} alt="Jotaro" className="h-12 w-12 rounded object-cover" />
                                         </td>
                                         <td className="px-6 py-4 font-medium text-gray-900">{product.name}</td>
-                                        <td className="px-6 py-4">{product.description}</td>
+                                        <td className="px-6 py-4">{product.stock}</td>
                                         <td className="px-6 py-4 font-semibold text-green-600">{product.price.toFixed(2)} €</td>
                                         <td className="flex justify-start px-6 py-4">
                                             <div className="mt-3 flex justify-end space-x-2">
@@ -100,8 +100,10 @@ export default function ProductView() {
                                     <img src={ProductImage} alt="Jotaro" className="h-16 w-16 rounded object-cover" />
                                     <div>
                                         <h3 className="font-medium text-gray-900">{product.name}</h3>
-                                        <p className="text-sm text-gray-500">{product.description}</p>
-                                        <p className="text-sm font-semibold text-green-600">{product.price.toFixed(2)} €</p>
+                                        <p className="text-sm text-gray-500">Stock : {product.stock}</p>
+                                        <ArchiveBoxArrowDownIcon className="h-6 w-6 text-[#6C3989]" />
+
+                                        <p className="text-sm">{product.price.toFixed(2)} €</p>
                                     </div>
                                 </div>
                                 <div className="mt-3 flex justify-end space-x-2">
