@@ -16,7 +16,7 @@ export default function Welcome({ phpVersion }) {
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
             <Header />
-            <div className="h-[630px] w-full">
+            <div className="h-[630px] w-full max-[640px]:h-[400px] sm:h-[630px] md:h-[630px] lg:h-[630px] xl:h-[630px] 2xl:h-[630px]">
                 <img src={JosukeBG} alt="Josuke Higashikata" className="h-full w-full object-cover" />
             </div>
 
