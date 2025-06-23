@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import Background from '../../assets/img/jojolion.png';
+import Background from '../../assets/img/backgrounds/overtherainbow.png';
 
 export default function NotFound() {
     return (

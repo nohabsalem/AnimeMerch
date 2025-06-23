@@ -20,9 +20,9 @@ export default function Welcome({ phpVersion }) {
                 <img src={JosukeBG} alt="Josuke Higashikata" className="h-full w-full object-cover" />
             </div>
 
-            <div className="flex flex-col items-center justify-center py-10">
+            <div className="flex flex-col items-center justify-center py-1">
                 <h1 className="mt-10 text-center text-4xl font-semibold text-[#6C3989]">Bienvenue sur AnimeMerch</h1>
-                <p className="text-lg text-gray-700">Votre destination ultime pour les produits dérivés d'animés !</p>
+                <p className="text-center text-lg text-gray-700">Votre destination ultime pour les produits dérivés d'animés !</p>
                 <button className="mt-4 rounded-xl bg-[#FF39B7] px-10 py-2 text-white">
                     <Link href="/products">Shopper</Link>
                 </button>
