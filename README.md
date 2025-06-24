@@ -15,6 +15,7 @@
     ```bash
     git clone https://mon-projet.git
     cd mon-projet
+    composer install
+    npm install
     composer run dev
-
     ```
