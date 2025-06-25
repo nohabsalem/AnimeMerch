@@ -18,7 +18,7 @@ Il se ressemble globalement à un vrai site, avec toutes (ou presque) les pages 
 - 🔐 **Authentification** (Register, Login, Logout, sessions sécurisées)
 - 👤 Espace utilisateur
 - 🛍️ Catalogue produit (vêtements inspirés de l'univers JoJo)
-- 🧺 Ajout au panier (fictif ou fonctionnel)
+- 🧺 Ajout au panier
 - 📝 Pages : Accueil, Boutique, À propos, Contact, etc.
 - ⚙️ Backend Laravel + migrations SQL
 - 📄 README + environnement `.env` prêt pour déploiement
