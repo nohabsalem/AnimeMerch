@@ -18,7 +18,7 @@ Il se ressemble globalement à un vrai site, avec toutes (ou presque) les pages 
 - 🔐 **Authentification** (Register, Login, Logout, sessions sécurisées)
 - 👤 Espace utilisateur
 - 🛍️ Catalogue produit (vêtements inspirés de l'univers JoJo)
-- 🧺 Ajout au panier
+- 🧺 Ajout au panier (fictif ou fonctionnel)
 - 📝 Pages : Accueil, Boutique, À propos, Contact, etc.
 - ⚙️ Backend Laravel + migrations SQL
 - 📄 README + environnement `.env` prêt pour déploiement
@@ -32,5 +32,15 @@ Il se ressemble globalement à un vrai site, avec toutes (ou presque) les pages 
     cd mon-projet
     composer install
     npm install
+
+    ```
+
+    // Paramétrer le .env en se basant sur .env.example (copier)
+
+    ```cmd
+    php artisan key:generate (clé de sécurité Laravel)
+    php artisan migrate
+    php artisan db:seed
+
     composer run dev
     ```
