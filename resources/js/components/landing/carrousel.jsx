@@ -55,7 +55,7 @@ export default function Carrousel() {
                     </div>
                 </div>
 
-                <div className="flex w-full flex-col justify-center px-2 md:w-1/2 md:px-4">
+                <div tabindex="0" className="flex w-full flex-col justify-center px-2 md:w-1/2 md:px-4">
                     <h2 className="mb-4 text-lg font-bold text-[#6C3989] sm:text-xl">Elégant et tendance</h2>
                     <p className="text-md md:text-base">
                         Megan incarne une présence forte — comme un Stand dans JoJo’s. Chaque tenue révèle une aura unique, entre classe et caractère.
