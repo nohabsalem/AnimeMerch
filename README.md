@@ -3,7 +3,7 @@
 Bonjour ! Ce projet est un site de e-commerce fictif de vente de vêtements en ligne, appelé AnimeMerch.
 Il se base majoritairement sur le style de Jojo's Bizarre Adventure.
 
-Il se ressemble globalement à un vrai site, avec toutes (ou presque) les pages qu'on retrouve sur un site officiel.
+Il se ressemble globalement à un vrai site, avec toutes les pages (ou presque) qu'on retrouve sur un site officiel de vente en ligne.
 
 ## 🛠 Prérequis
 
