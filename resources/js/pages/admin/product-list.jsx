@@ -2,12 +2,17 @@ import AppLayout from '@/layouts/app-layout';
 import { EyeIcon } from '@heroicons/react/24/solid';
 import { Head } from '@inertiajs/react';
 import { PenIcon, TrashIcon } from 'lucide-react';
+import { useState } from 'react';
 import ProductImage from '../../assets/img/jotaro.svg'; // import SVG
+import Modal from '../../components/admin/modal';
 import AdminSort from '../../components/admin/sort';
 import Footer from '../../components/footer';
 import Searchbar from '../../components/searchbar';
+import AddProduct from './add-product';
 
 export default function ProductView() {
+    const [openModal, setOpenModal] = useState(false);
+
     const breadcrumbs = [
         {
             title: 'Produits',
@@ -45,6 +50,12 @@ export default function ProductView() {
                     <p className="text-sm text-gray-500">Gérez vos produits ici.</p>
                     <br />
                     <div className="mb-4 flex items-center justify-between">
+                        <button
+                            className="cursor-pointer rounded-lg bg-[#FF39B7] px-4 py-2 text-white hover:bg-[#FF39B7]/90 focus:ring-2 focus:ring-[#FF39B7]/50 focus:outline-none"
+                            onClick={() => setOpenModal(true)}
+                        >
+                            Ajouter un produit
+                        </button>
                         <Searchbar />
                         <AdminSort />
                     </div>
@@ -125,6 +136,9 @@ export default function ProductView() {
                 </div>
             </AppLayout>
             <Footer />
+            <Modal open={openModal} onClose={() => setOpenModal(false)}>
+                <AddProduct />
+            </Modal>
         </>
     );
 }
