@@ -2,11 +2,15 @@ import AppLayout from '@/layouts/app-layout';
 import { EyeIcon, ShoppingCartIcon } from '@heroicons/react/24/solid';
 import { Head } from '@inertiajs/react';
 import { PenIcon, TrashIcon } from 'lucide-react';
+import { useState } from 'react';
+import Modal from '../../components/admin/modal';
 import AdminSort from '../../components/admin/sort';
 import Footer from '../../components/footer';
 import Searchbar from '../../components/searchbar';
 
 export default function UserList() {
+    const [openModal, setOpenModal] = useState(false);
+
     const breadcrumbs = [
         {
             title: 'Utilisateurs',
@@ -58,6 +62,12 @@ export default function UserList() {
                     <p className="text-sm text-gray-500">Gérez les utilisateurs de votre application.</p>
                     <br />
                     <div className="mb-4 flex items-center justify-between">
+                        <button
+                            className="cursor-pointer rounded-lg bg-[#FF39B7] px-4 py-2 text-white hover:bg-[#FF39B7]/90 focus:ring-2 focus:ring-[#FF39B7]/50 focus:outline-none"
+                            onClick={() => setOpenModal(true)}
+                        >
+                            Ajouter un utilisateur
+                        </button>
                         <Searchbar />
                         <AdminSort />
                     </div>
@@ -140,6 +150,56 @@ export default function UserList() {
                 </div>
             </AppLayout>
             <Footer />
+            <div>
+                <Modal open={openModal} onClose={() => setOpenModal(false)}>
+                    <h1 className="text-center text-2xl font-bold">Ajouter un utilisateur</h1>
+                    <form onSubmit={(e) => e.preventDefault()} className="mx-auto max-w-lg space-y-4">
+                        <div>
+                            <label htmlFor="firstname">Prénom :</label>
+                            <input
+                                type="text"
+                                placeholder="Prénom de l'utilisateur"
+                                id="firstname"
+                                maxLength={50}
+                                className="border-col w-full rounded-lg border border-[#6C3989] p-2 placeholder:italic"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="lastname">Nom :</label>
+                            <input
+                                type="text"
+                                placeholder="Nom de l'utilisateur"
+                                id="lastname"
+                                maxLength={50}
+                                className="border-col w-full rounded-lg border border-[#6C3989] p-2 placeholder:italic"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="email">Email :</label>
+                            <input
+                                type="email"
+                                placeholder="Email de l'utilisateur"
+                                id="email"
+                                className="w-full rounded-lg border border-[#6C3989] p-2 placeholder:italic"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="password">Mot de passe :</label>
+                            <input
+                                type="password"
+                                placeholder="Mot de passe de l'utilisateur"
+                                id="password"
+                                className="w-full rounded-lg border border-[#6C3989] p-2 placeholder:italic"
+                            />
+                        </div>
+                        <div className="flex justify-center">
+                            <button type="submit" className="cursor-pointer rounded-lg bg-[#FF39B7] px-6 py-2 text-white hover:bg-[#FF39B7]/90">
+                                Ajouter l'utilisateur
+                            </button>
+                        </div>
+                    </form>
+                </Modal>
+            </div>
         </>
     );
 }
