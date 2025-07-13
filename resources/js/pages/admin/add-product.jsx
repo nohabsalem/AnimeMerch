@@ -23,7 +23,7 @@ export default function AddProduct() {
             <h1 className="text-center text-2xl font-bold">Ajouter un produit</h1>
             <form onSubmit={handleSubmit} className="mx-auto max-w-lg space-y-4">
                 <div>
-                    <label htmlFor="name">Nom</label>
+                    <label htmlFor="name">Nom :</label>
                     <input
                         type="text"
                         placeholder="Nom du produit"
@@ -37,7 +37,7 @@ export default function AddProduct() {
                 </div>
                 <div>
                     <label className="rounded-xl" htmlFor="description">
-                        Description
+                        Description :
                     </label>
                     <textarea
                         id="description"
@@ -49,7 +49,7 @@ export default function AddProduct() {
                     {errors.description && <div className="text-red-500">{errors.description}</div>}
                 </div>
                 <div>
-                    <label htmlFor="price">Prix</label>
+                    <label htmlFor="price">Prix :</label>
                     <input
                         type="number"
                         id="price"
@@ -64,12 +64,12 @@ export default function AddProduct() {
                     {errors.price && <div className="text-red-500">{errors.price}</div>}
                 </div>
                 <div>
-                    <label htmlFor="stock">Stock</label>
+                    <label htmlFor="stock">Stock :</label>
                     <input
                         type="number"
                         id="stock"
                         min="0"
-                        max="500"
+                        max="99"
                         value={data.stock}
                         onChange={(e) => setData('stock', e.target.value)}
                         className="w-full rounded-lg border border-[#6C3989] p-2 placeholder:italic"
