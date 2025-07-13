@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
 
@@ -30,8 +31,6 @@ Route::get('/cart', function () {
     return Inertia::render('cart/cart-affichage');
 })->name('cart');
 
-
-
 //Admin views 
 Route::get('/admin', function () {
     return Inertia::render('admin/dashboard');
@@ -49,6 +48,10 @@ Route::get('/admin/commands', function () {
 Route::get('/admin/products-view', function () {
     return Inertia::render('admin/product-list');
 })->name('admin.products');
+
+Route::get('admin/add-product', function () {
+    return Inertia::render('admin/add-product');
+})->name('admin.addproducts');
 
 // UserViews
 
@@ -92,3 +95,9 @@ Route::get('/contact', function () {
 Route::get('/payment', function () {
     return Inertia::render('commands/payment');
 })->name('payments');
+
+
+// Product CRUD
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
