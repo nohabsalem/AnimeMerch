@@ -108,7 +108,12 @@ export default function Register() {
                             <InputError message={errors.password_confirmation} />
                         </div>
 
-                        <Button type="submit" className="mt-4 w-full bg-[#FF39B7] hover:bg-[#FF39B7]" tabIndex={5} disabled={processing}>
+                        <Button
+                            type="submit"
+                            className="mt-4 w-full cursor-pointer bg-[#FF39B7] hover:bg-[#FF39B7]"
+                            tabIndex={5}
+                            disabled={processing}
+                        >
                             {processing && <LoaderCircle className="h-4 w-4 animate-spin" />}
                             Créer un compte
                         </Button>

@@ -41,13 +41,15 @@ export default function DeleteUser() {
 
                 <Dialog>
                     <DialogTrigger asChild>
-                        <Button variant="destructive">Supprimer le compte</Button>
+                        <Button className="cursor-pointer space-y-0.5 text-white hover:bg-red-700" variant="destructive">
+                            Supprimer le compte
+                        </Button>
                     </DialogTrigger>
                     <DialogContent>
                         <DialogTitle>Êtes-vous sûr.e de vouloir supprimer le compte ? </DialogTitle>
                         <DialogDescription>
-                            Une fois votre compte supprimé, toutes ses ressources et données seront également supprimées définitivement.
-                            Veuillez saisir votre mot de passe pour confirmer la suppression définitive de votre compte.
+                            Une fois votre compte supprimé, toutes ses ressources et données seront également supprimées définitivement. Veuillez
+                            saisir votre mot de passe pour confirmer la suppression définitive de votre compte.
                         </DialogDescription>
                         <form className="space-y-6" onSubmit={deleteUser}>
                             <div className="grid gap-2">
