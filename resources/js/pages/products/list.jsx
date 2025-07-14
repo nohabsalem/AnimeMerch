@@ -1,5 +1,6 @@
 import { usePage } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
+import PlaceHolderImg from '../../assets/img/placeholder.svg';
 import PriceFilter from '../../components/filters/price';
 import SizeFilter from '../../components/filters/size';
 import Footer from '../../components/footer';
@@ -68,6 +69,15 @@ export default function ProductList() {
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {products.map((product) => (
                                 <div key={product.id} className="rounded-lg border p-4">
+                                    <img
+                                        src={product.image_url || PlaceHolderImg}
+                                        alt={product.name}
+                                        className="mb-2 h-40 w-full rounded object-cover"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = PlaceHolderImg;
+                                        }}
+                                    />
                                     <h3 className="text-lg font-bold">{product.name}</h3>
                                     <p className="text-gray-600">{product.description}</p>
                                     <p className="text-xl font-semibold">${product.price}</p>
