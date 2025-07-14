@@ -97,7 +97,12 @@ Route::get('/payment', function () {
 })->name('payments');
 
 
-// Product CRUD
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+
+// Traitement du formulaire de création
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+
+// Liste des produits (affichage dynamique)
+Route::get('/products', [ProductController::class, 'index']);
+
+// Détail d’un produit
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');

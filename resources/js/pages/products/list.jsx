@@ -1,3 +1,4 @@
+import { usePage } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import PriceFilter from '../../components/filters/price';
 import SizeFilter from '../../components/filters/size';
@@ -5,9 +6,8 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Searchbar from '../../components/searchbar';
 import Sort from '../../components/sort';
-import ProductCards from './cards';
-
 export default function ProductList() {
+    const { products } = usePage().props;
     const [showFilters, setShowFilters] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -65,7 +65,15 @@ export default function ProductList() {
 
                     {/* Colonne des produits */}
                     <div className="flex-1">
-                        <ProductCards />
+                        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                            {products.map((product) => (
+                                <div key={product.id} className="rounded-lg border p-4">
+                                    <h3 className="text-lg font-bold">{product.name}</h3>
+                                    <p className="text-gray-600">{product.description}</p>
+                                    <p className="text-md font-medium">{product.price}€</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 

@@ -8,6 +8,14 @@ use Inertia\Inertia;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        $products = Product::all(); // ou avec pagination: Product::paginate(12)
+        return Inertia::render('products/list', [
+            'products' => $products,
+        ]);
+    }
+
     public function create()
     {
         return Inertia::render('admin/add-product');
