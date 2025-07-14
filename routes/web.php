@@ -98,12 +98,6 @@ Route::get('/payment', function () {
 
 
 
-// Traitement du formulaire de création
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-Route::post('/products', [ProductController::class, 'store'])->name('products.store');
-
-// Liste des produits (affichage dynamique)
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-
-// Détail d’un produit
-Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+// Route affichage liste admin produits
+Route::get('/admin/products-view', [ProductController::class, 'index'])->name('products.index');
+route::get('/products', [ProductController::class, 'indexView'])->name('products.indexView');

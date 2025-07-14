@@ -1,6 +1,5 @@
 import { usePage } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
-import PlaceHolderImg from '../../assets/img/placeholder.svg';
 import PriceFilter from '../../components/filters/price';
 import SizeFilter from '../../components/filters/size';
 import Footer from '../../components/footer';
@@ -67,27 +66,13 @@ export default function ProductList() {
                     {/* Colonne des produits */}
                     <div className="flex-1">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                            {products.length > 0 ? (
-                                products.map((product) => (
-                                    <div key={product.id} className="rounded-lg border p-4 shadow transition hover:shadow-lg">
-                                        <img
-                                            src={product.image_url || PlaceHolderImg}
-                                            alt={product.name}
-                                            className="mb-2 h-40 w-full rounded object-cover"
-                                            onError={(e) => {
-                                                e.target.onerror = null;
-                                                e.target.src = PlaceHolderImg;
-                                            }}
-                                        />
-
-                                        <h3 className="text-lg font-bold">{product.name}</h3>
-                                        <p className="text-gray-600">{product.description}</p>
-                                        <p className="text-md font-medium text-[#FF39B7]">{product.price}€</p>
-                                    </div>
-                                ))
-                            ) : (
-                                <p>Aucun produit trouvé.</p>
-                            )}
+                            {products.map((product) => (
+                                <div key={product.id} className="rounded-lg border p-4">
+                                    <h3 className="text-lg font-bold">{product.name}</h3>
+                                    <p className="text-gray-600">{product.description}</p>
+                                    <p className="text-xl font-semibold">${product.price}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

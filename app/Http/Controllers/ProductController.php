@@ -8,14 +8,22 @@ use Inertia\Inertia;
 
 class ProductController extends Controller
 {
-    // Affiche la liste admin (avec Inertia vers React)
     public function index()
     {
-        // Récupère TOUT
         $products = Product::all();
 
         // Retourne vers React via Inertia
         return Inertia::render('admin/product-list', [
+            'products' => $products,
+        ]);
+    }
+
+    public function indexView()
+    {
+        $products = Product::all();
+
+        // Retourne vers React via Inertia
+        return Inertia::render('products/list', [
             'products' => $products,
         ]);
     }
