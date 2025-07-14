@@ -28,7 +28,9 @@ class ProductController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
+            'image_path' => 'nullable|string',
         ]);
+
 
         Product::create($validated);
 

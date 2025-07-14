@@ -48,6 +48,23 @@ export default function AddProduct() {
                     />
                     {errors.description && <div className="text-red-500">{errors.description}</div>}
                 </div>
+                {/* <div>
+    <label htmlFor="category_id">Catégorie :</label>
+    <select
+        id="category_id"
+        value={data.category_id}
+        onChange={(e) => setData('category_id', e.target.value)}
+        className="w-full rounded-lg border border-[#6C3989] p-2"
+    >
+        <option value="">Sélectionnez une catégorie</option>
+        {/* Boucle sur les catégories passées en props */}
+                {/* {categories.map((cat) => (
+            <option key={cat.id} value={cat.id}>{cat.name}</option>
+        ))} */}
+                {/* </select> */}
+                {/* {errors.category_id && <div className="text-red-500">{errors.category_id}</div>} */}
+                {/* </div> */}
+
                 <div>
                     <label htmlFor="price">Prix :</label>
                     <input
