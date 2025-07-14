@@ -1,6 +1,6 @@
 import AppLayout from '@/layouts/app-layout';
 import { EyeIcon } from '@heroicons/react/24/solid';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import { PenIcon, TrashIcon } from 'lucide-react';
 import { useState } from 'react';
 import ProductImage from '../../assets/img/jotaro.svg'; // import SVG
@@ -13,31 +13,12 @@ import AddProduct from './add-product';
 export default function ProductView() {
     const [openModal, setOpenModal] = useState(false);
 
+    const { products = [] } = usePage().props; // <=== Récupération dynamique des produits
+
     const breadcrumbs = [
         {
             title: 'Produits',
             href: '/products-view',
-        },
-    ];
-
-    const products = [
-        {
-            id: 1,
-            name: 'Produit 1',
-            stock: '11',
-            price: 19.99,
-        },
-        {
-            id: 2,
-            name: 'Produit 2',
-            stock: '12',
-            price: 29.99,
-        },
-        {
-            id: 3,
-            name: 'Produit 3',
-            stock: '13',
-            price: 39.99,
         },
     ];
 
@@ -105,6 +86,7 @@ export default function ProductView() {
 
                     {/* Cartes mobile */}
                     <div className="space-y-4 md:hidden">
+                        {/* Version mobile inchangée, comme demandé */}
                         {products.map((product, index) => (
                             <div key={index} className="rounded-lg bg-white p-4 shadow">
                                 <div className="flex items-center space-x-4">
@@ -112,7 +94,6 @@ export default function ProductView() {
                                     <div>
                                         <h3 className="font-medium text-gray-900">{product.name}</h3>
                                         <p className="text-sm text-gray-500">Stock : {product.stock}</p>
-
                                         <p className="text-sm">{product.price.toFixed(2)} €</p>
                                     </div>
                                 </div>
