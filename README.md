@@ -18,7 +18,7 @@ Il se ressemble globalement à un vrai site, avec toutes les pages (ou presque) 
 - 🔐 **Authentification** (Register, Login, Logout, sessions sécurisées)
 - 👤 Espace utilisateur
 - 🛍️ Catalogue produit (vêtements inspirés de l'univers JoJo)
-- 🧺 Ajout au panier (fictif ou fonctionnel)
+- 🧺 Ajout au panier
 - 📝 Pages : Accueil, Boutique, À propos, Contact, etc.
 - ⚙️ Backend Laravel + migrations SQL
 - 📄 README + environnement `.env` prêt pour déploiement
@@ -28,7 +28,7 @@ Il se ressemble globalement à un vrai site, avec toutes les pages (ou presque) 
 1. **Cloner le projet**
 
     ```cmd
-    git clone https://mon-projet.git
+    git clone https://github.com/nohabsalem/AnimeMerch
     cd mon-projet
     composer install
     npm install
