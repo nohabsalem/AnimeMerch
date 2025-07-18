@@ -13,14 +13,14 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         Product::create([
-            'name' => 'Seeder1 Tee-shirt',
+            'name' => 'Seeder1',
             'price' => 19.99,
             'description' => 'congratulations ! you ran a seeder',
             'stock' => 100,
         ]);
 
         Product::create([
-            'name' => 'Seeder2 Tee-shirt',
+            'name' => 'Seeder2',
             'price' => 19.99,
             'description' => 'congratulations ! you ran a seeder',
             'stock' => 100,
