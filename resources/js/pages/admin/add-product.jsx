@@ -11,7 +11,7 @@ export default function AddProduct() {
         e.preventDefault();
         post(route('products.store'), {
             onSuccess: () => {
-                alert('🎉 Votre produit a bien été ajouté !');
+                alert(' Votre produit a bien été ajouté !');
             },
         });
     }
