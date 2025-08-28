@@ -1,18 +1,25 @@
 import Footer from '@/components/footer';
 import Header from '@/components/header';
+import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import useCart from '../cart/cart';
-
 export default function ProductDetails({ product }) {
     const { addToCart } = useCart();
 
     // Si tu ajoutes un champ image, sinon mets une image par défaut
-    const [selectedImage, setSelectedImage] = useState(product.image || '/default-product.jpg');
+    const [selectedImage, setSelectedImage] = useState(product?.image_path || '/default-product.jpg');
     const [showDescription, setShowDescription] = useState(false);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
 
     if (!product) {
-        return <div className="py-10 text-center text-red-500">Produit introuvable.</div>;
+        return (
+            <div className="py-10 text-center text-red-500">
+                Produit introuvable.
+                <button className="mx-auto mt-4 block cursor-pointer rounded-md bg-[#FF39B7] px-4 py-2 text-white">
+                    <Link href="/products">Retourner à la boutique</Link>
+                </button>
+            </div>
+        );
     }
 
     return (
