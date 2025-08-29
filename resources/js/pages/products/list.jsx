@@ -1,4 +1,4 @@
-import { usePage } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import PlaceHolderImg from '../../assets/img/placeholder.svg';
 import PriceFilter from '../../components/filters/price';
@@ -70,7 +70,7 @@ export default function ProductList() {
                             {products.map((product) => (
                                 <div key={product.id} className="rounded-lg border p-4">
                                     <img
-                                        src={product.image_url || PlaceHolderImg}
+                                        src={product.image_path || PlaceHolderImg}
                                         alt={product.name}
                                         className="mb-2 h-40 w-full rounded object-cover"
                                         onError={(e) => {
@@ -80,7 +80,8 @@ export default function ProductList() {
                                     />
                                     <h3 className="text-lg font-bold">{product.name}</h3>
                                     <p className="text-gray-600">{product.description}</p>
-                                    <p className="text-xl font-semibold">${product.price}</p>
+                                    <p className="text-xl font-semibold">{product.price} €</p>
+                                    <Link href={route('products.show', product.id)}>Voir le produit</Link>
                                 </div>
                             ))}
                         </div>
