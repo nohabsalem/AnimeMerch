@@ -3,8 +3,10 @@ import Header from '@/components/header';
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import useCart from '../cart/cart';
+
 export default function ProductDetails({ product }) {
     const { addToCart } = useCart();
+    // console.log('ProductDetails props:', product);
 
     // Si tu ajoutes un champ image, sinon mets une image par défaut
     const [selectedImage, setSelectedImage] = useState(product?.image_path || '/default-product.jpg');
