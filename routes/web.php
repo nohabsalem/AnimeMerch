@@ -79,34 +79,43 @@ Route::get('/payment', function () {
 // Affichage de tous les produits
 Route::get('/products', [ProductController::class, 'indexView'])->name('products.indexView');
 
-//Dashboard admin
-Route::get('/admin', function () {
-    return Inertia::render('admin/dashboard');
-})->name('admin');
+/**Routes ADMIN
+ * Celles-ci sont protégées par un middleware
+ **/
+Route::middleware(['auth', 'verified', 'admin'])->group(function () {
+    Route::get('/admin', function () {
+        return Inertia::render('admin/dashboard');
+    })->name('admin');
 
-/* Les CRUD chez l'admin :
+    //Dashboard admin
+    Route::get('/admin', function () {
+        return Inertia::render('admin/dashboard');
+    })->name('admin');
+
+    /* Les CRUD chez l'admin :
     CRUD Users : */
-Route::get('/admin/users', function () {
-    return Inertia::render('admin/user-list');
-})->name('admin.users');
+    Route::get('/admin/users', function () {
+        return Inertia::render('admin/user-list');
+    })->name('admin.users');
 
-/* CRUD Commandes :
+    /* CRUD Commandes :
 Afficher toutes les commandes des users */
 
-Route::get('/admin/commands', function () {
-    return Inertia::render('admin/command-list');
-})->name('admin.users');
+    Route::get('/admin/commands', function () {
+        return Inertia::render('admin/command-list');
+    })->name('admin.users');
 
-/* CRUD Produits :
+    /* CRUD Produits :
     Afficher tous les produits : */
-// Route::get('/admin/products-view', function () {
-//     return Inertia::render('admin/product-list');
-// })->name('admin.products');
+    // Route::get('/admin/products-view', function () {
+    //     return Inertia::render('admin/product-list');
+    // })->name('admin.products');
 
-// Affichage de tous les produits chez l'admin
-Route::get('/admin/products-view', [ProductController::class, 'index'])->name('products.index');
+    // Affichage de tous les produits chez l'admin
+    Route::get('/admin/products-view', [ProductController::class, 'index'])->name('products.index');
 
-// Ajouter des produits
-Route::get('admin/add-product', function () {
-    return Inertia::render('admin/add-product');
-})->name('admin.addproducts');
+    // Ajouter des produits
+    Route::get('admin/add-product', function () {
+        return Inertia::render('admin/add-product');
+    })->name('admin.addproducts');
+});

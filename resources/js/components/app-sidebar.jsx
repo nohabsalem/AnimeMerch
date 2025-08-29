@@ -12,6 +12,13 @@ const mainNavItems = [
         url: '/dashboard',
         icon: FolderIcon,
     },
+    // if (user.role=="admin"){
+    {
+        title: 'Dashboard (admin)',
+        url: '/admin',
+        icon: FolderIcon,
+        // }
+    },
 
     {
         title: 'Compte',
