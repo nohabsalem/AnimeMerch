@@ -22,10 +22,23 @@ require __DIR__ . '/settings.php';
 require __DIR__ . '/auth.php';
 
 // Pages publiques (tous les rôles) : 
-// Page 404 
+/**
+ * Pages d'erreurs : 
+ * 404 : */
 Route::fallback(function () {
     return Inertia::render('errors/404');
 })->name('fallback');
+
+// Page 403 : 
+Route::get('/forbidden', function () {
+    return Inertia::render('errors/403');
+})->name('forbidden');
+
+
+
+Route::get('/cart', function () {
+    return Inertia::render('cart/cart-affichage');
+})->name('cart');
 
 // Page Panier
 Route::get('/cart', function () {
