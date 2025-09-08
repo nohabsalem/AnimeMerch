@@ -22,7 +22,7 @@
         "typescript-eslint": "^8.23.0"
     },
     "dependencies": {
-        "@headlessui/react": "^2.2.3",
+        "@headlessui/react": "^2.2.7",
         "@heroicons/react": "^2.2.0",
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/react": "^2.0.8",
