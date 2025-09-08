@@ -67,7 +67,7 @@ export default function ProductList() {
                     {/* Colonne des produits */}
                     <div className="flex-1">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                            {products.map((product) => (
+                            {products.data.map((product) => (
                                 <div key={product.id} className="rounded-lg border p-4">
                                     <img
                                         src={product.image_path || PlaceHolderImg}
