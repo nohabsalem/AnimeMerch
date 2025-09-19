@@ -11,7 +11,7 @@ class CheckAdmin
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check() || Auth::user()->role !== 'admin') {
-            return redirect()->route('forbidden'); // redirige vers ta page 403 personnalisée
+            return redirect()->route('forbidden');
         }
 
         return $next($request);
