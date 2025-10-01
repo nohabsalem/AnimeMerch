@@ -61,7 +61,8 @@ export default function ProductDetails({ product }) {
                                 id="quantity"
                                 type="number"
                                 min={1}
-                                max={product.stock}
+                                max={10}
+                                // max={product.stock}
                                 value={selectedQuantity}
                                 onChange={(e) => setSelectedQuantity(Number(e.target.value))}
                                 className="w-20 border p-2"
@@ -70,7 +71,7 @@ export default function ProductDetails({ product }) {
 
                         {/* Bouton */}
                         <button
-                            className="mt-4 rounded-md bg-[#FF39B7] px-6 py-2 text-white shadow transition hover:bg-pink-600"
+                            className="mt-4 cursor-pointer rounded-md bg-[#FF39B7] px-6 py-2 text-white shadow transition"
                             disabled={product.stock === 0}
                             onClick={() => {
                                 if (selectedQuantity < 1 || selectedQuantity > product.stock) {
