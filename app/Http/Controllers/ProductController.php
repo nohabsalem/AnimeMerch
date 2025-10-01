@@ -53,11 +53,11 @@ class ProductController extends Controller
         }
 
         // // Pagination : 12 produits par page
-        // $products = $query->paginate(12)->withQueryString();
+        $products = $query->paginate(12)->withQueryString();
 
-        // return Inertia::render('products/list', [
-        //     'products' => $products,
-        // ]);
+        return Inertia::render('products/list', [
+            'products' => $products,
+        ]);
     }
 
     /**
