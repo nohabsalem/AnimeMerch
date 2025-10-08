@@ -79,17 +79,15 @@ export default function Payment() {
                             </div>
                         </form>
                     </div>
-                </div>
-                <div className="mt-6 flex justify-center">
-                    <div className="mt-6 flex justify-center">
+
+                    <div className="mt-6 flex flex-col items-center space-y-6">
                         <Link
                             href="/cart"
                             className="rounded-md border-2 border-[#FF39B7] bg-white px-5 py-2 text-base font-semibold text-[#FF39B7] transition-all duration-200 hover:bg-[#FF39B7] hover:text-white hover:shadow-lg"
                         >
                             Retour au panier
                         </Link>
-                    </div>
-                    <div className="mt-6 flex justify-center">
+
                         <button
                             type="submit"
                             className="cursor-pointer rounded-md bg-[#6C3989] px-6 py-2 text-base font-semibold text-white transition-all duration-200 hover:bg-[#572d6f] hover:shadow-lg"
