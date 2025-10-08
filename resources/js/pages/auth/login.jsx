@@ -82,7 +82,7 @@ export default function Login({ status, canResetPassword }) {
 
                             <Button type="submit" className="mt-4 w-full bg-[#FF39B7] hover:bg-[#FF39B7]" tabIndex={4} disabled={processing}>
                                 {processing && <LoaderCircle className="h-4 w-4 animate-spin" />}
-                                Log in
+                                Se connecter
                             </Button>
                         </div>
 
