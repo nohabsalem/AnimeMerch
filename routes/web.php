@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductImageController;
 
 Route::get('/', function () {
 
@@ -91,6 +92,9 @@ Route::get('/payment', function () {
 
 // Affichage de tous les produits
 Route::get('/products', [ProductController::class, 'indexView'])->name('products.indexView');
+
+Route::get('/product-image/{filename}', [ProductImageController::class, 'show'])
+    ->middleware('auth');
 
 /**Routes ADMIN
  * Celles-ci sont protégées par un middleware
