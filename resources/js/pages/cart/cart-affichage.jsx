@@ -8,7 +8,6 @@ import useCart from './cart';
 
 export default function Cart() {
     const { cart, removeFromCart, clearCart } = useCart();
-    console.log('CART', cart);
     const [selectedSize, setSelectedSize] = useState(null);
 
     return (
@@ -39,10 +38,12 @@ export default function Cart() {
                                             <div className="flex flex-auto flex-wrap items-center justify-between gap-4 space-x-4">
                                                 <div>
                                                     <strong>{item.name}</strong>
-                                                    <p>Prix : {item.price} €</p>
+                                                    <p>Prix unitaire : {item.price} €</p>
+                                                    <p>Quantité : {item.quantity}</p>
+                                                    <p>Sous-total : {(item.price * item.quantity).toFixed(2)} €</p>
                                                     <div>
-                                                        <span>Taille sélectionée : </span>
-                                                        <span className="font-bold">{item.selectedSize}</span>
+                                                        <span>Taille sélectionnée : </span>
+                                                        <span className="font-bold">{item.selectedSize || '—'}</span>
                                                     </div>
                                                 </div>
                                                 <button className="cursor-pointer" onClick={() => removeFromCart(index)}>
@@ -53,14 +54,16 @@ export default function Cart() {
                                     ))}
                                 </ul>
 
-                                <p className="mt-4">Total : {cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)} €</p>
+                                <p className="mt-4">Total : {cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)} €</p>
                             </div>
                         </div>
 
                         <div className="flex-auto rounded border-2 border-[#6C3989] bg-white p-4 shadow-md md:flex-1/3">
                             <h2 className="mb-4 text-xl font-bold">Récapitulatif</h2>
                             <p>Total articles : {cart.length}</p>
-                            <p className="text-lg font-bold">Total : {cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)} €</p>
+                            <p className="text-lg font-bold">
+                                Total : {cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)} €
+                            </p>
 
                             <button
                                 className="mt-4 w-full cursor-pointer rounded-md bg-red-600 px-4 py-2 text-white hover:bg-red-700"
