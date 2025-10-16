@@ -35,13 +35,13 @@ export default function Cart() {
                                 <ul className="space-y-2">
                                     {cart.map((item, index) => (
                                         <li key={index} className="flex items-center gap-3 rounded border p-2">
-                                            <img src={item.imageUrl} alt={item.name} className="h-35 w-35 rounded border object-cover" />
+                                            <img src={item.image_path} alt={item.name} className="h-35 w-35 rounded border object-cover" />
                                             <div className="flex flex-auto flex-wrap items-center justify-between gap-4 space-x-4">
                                                 <div>
                                                     <strong>{item.name}</strong>
                                                     <p>Prix : {item.price} €</p>
                                                     <div>
-                                                        <span>Taille : </span>
+                                                        <span>Taille sélectionée : </span>
                                                         <span className="font-bold">{item.selectedSize}</span>
                                                     </div>
                                                 </div>
