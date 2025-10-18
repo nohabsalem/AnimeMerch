@@ -33,12 +33,12 @@ class ProductController extends Controller
     // }
     public function show($id)
     {
-        $product = Product::with('images')->findOrFail($id);
+        $product = Product::with(['images', 'variants'])->findOrFail($id);
+
         return Inertia::render('products/details', [
             'product' => $product,
         ]);
     }
-
     /**
      * Vue publique : liste des produits avec tri et pagination
      */

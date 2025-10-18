@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
+use App\Http\Controllers\VariantController;
 
 Route::get('/', function () {
 
@@ -136,3 +137,6 @@ Afficher toutes les commandes des users */
         return Inertia::render('admin/add-product');
     })->name('admin.addproducts');
 });
+
+/* Controller utilisant un CRUD grâce à la commande --resource*/
+Route::resource('variants', VariantController::class);
