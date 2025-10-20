@@ -19,7 +19,7 @@ export default function SizeSelector({ variants, onSelectSize }) {
 
     return (
         <>
-            <h3 className="mb-2 font-semibold">Taille :</h3>
+            <h3 className="mb-2 font-semibold">Tailles disponibles :</h3>
             <div className="grid max-w-xs grid-cols-5 gap-2">
                 {allSizes.map((size) => {
                     const isAvailable = availableSizes[size];
