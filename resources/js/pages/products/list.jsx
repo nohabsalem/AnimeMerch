@@ -79,7 +79,7 @@ export default function ProductList() {
                                         }}
                                     />
                                     <h3 className="text-lg font-bold">{product.name}</h3>
-                                    <p className="text-gray-600">{product.description}</p>
+                                    {/* <p className="text-gray-600">{product.description}</p> */}
                                     <p className="text-xl font-semibold">{product.price} €</p>
                                     <Link href={route('products.show', product.id)} className="text-[#6c3989]">
                                         Voir le produit
