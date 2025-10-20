@@ -1,7 +1,7 @@
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import ProductImageSelector from '@/components/ImageSelector';
-import SizeSelector from '@/components/SizeSelector'; // Composant pour afficher les tailles
+import SizeSelector from '@/components/SizeSelector';
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import useCart from '../cart/cart';
@@ -29,7 +29,6 @@ export default function ProductDetails({ product }) {
     const variants = Array.isArray(product.variants) ? product.variants : [];
     const hasVariants = variants.length > 0;
 
-    /* Sélectionne la variante correspondante à la taille */
     const variantForSize = variants.find((v) => v.size === selectedSize);
     const stockForSize = variantForSize ? variantForSize.stock : product.stock;
 
