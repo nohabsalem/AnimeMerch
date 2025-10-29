@@ -31,14 +31,26 @@ class ProductController extends Controller
     //         'product' => $product,
     //     ]);
     // }
+
+    //fonction cool qui marche !!!!!!!!!!!!!!!!!!!!!!!!
+    // public function show($id)
+    // {
+    //     $product = Product::with(['images', 'variants'])->findOrFail($id);
+
+    //     return Inertia::render('products/details', [
+    //         'product' => $product,
+    //     ]);
+    // }
+
+
     public function show($id)
     {
-        $product = Product::with(['images', 'variants'])->findOrFail($id);
-
+        $product = Product::with(['variants', 'images'])->findOrFail($id);
         return Inertia::render('products/details', [
             'product' => $product,
         ]);
     }
+
     /**
      * Vue publique : liste des produits avec tri et pagination
      */
