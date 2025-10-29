@@ -8,7 +8,11 @@ import useCart from '../cart/cart';
 
 export default function ProductDetails({ product }) {
     const { addToCart } = useCart();
-    const images = product?.images?.length > 0 ? product.images.map((img) => img.image_path) : [product?.image_path || '/default-product.jpg'];
+    // const images = product?.images?.length > 0 ? product.images.map((img) => img.image_path) : [product?.image_path || '/default-product.jpg'];
+    const images =
+        product?.images?.length > 0
+            ? product.images.map((img) => '/' + img.image_path)
+            : [product?.image_path ? '/' + product.image_path : '/default-product.jpg'];
 
     const [showDescription, setShowDescription] = useState(false);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
