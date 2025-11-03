@@ -1,5 +1,5 @@
 <?php
-
+/*
 namespace App\Http\Controllers;
 
 use App\Models\Product;
@@ -11,6 +11,7 @@ class ProductController extends Controller
     /**
      * Vue admin : liste complète des produits
      */
+/*
     public function index()
     {
         $products = Product::all();
@@ -23,26 +24,26 @@ class ProductController extends Controller
     /**
      * Affichage d'un produit spécifique
      */
-    // public function show($id)
-    // {
-    //     $product = Product::findOrFail($id);
+// public function show($id)
+// {
+//     $product = Product::findOrFail($id);
 
-    //     return Inertia::render('products/details', [
-    //         'product' => $product,
-    //     ]);
-    // }
+//     return Inertia::render('products/details', [
+//         'product' => $product,
+//     ]);
+// }
 
-    //fonction cool qui marche !!!!!!!!!!!!!!!!!!!!!!!!
-    // public function show($id)
-    // {
-    //     $product = Product::with(['images', 'variants'])->findOrFail($id);
+//fonction cool qui marche !!!!!!!!!!!!!!!!!!!!!!!!
+// public function show($id)
+// {
+//     $product = Product::with(['images', 'variants'])->findOrFail($id);
 
-    //     return Inertia::render('products/details', [
-    //         'product' => $product,
-    //     ]);
-    // }
+//     return Inertia::render('products/details', [
+//         'product' => $product,
+//     ]);
+// }
 
-
+/*
     public function show($id)
     {
         $product = Product::with(['variants', 'images'])->findOrFail($id);
@@ -54,6 +55,7 @@ class ProductController extends Controller
     /**
      * Vue publique : liste des produits avec tri et pagination
      */
+/*
     public function indexView(Request $request)
     {
         $query = Product::query();
@@ -82,6 +84,7 @@ class ProductController extends Controller
     /**
      * Formulaire pour créer un produit
      */
+/*
     public function create()
     {
         return Inertia::render('admin/add-product');
@@ -90,6 +93,7 @@ class ProductController extends Controller
     /**
      * Stockage d'un nouveau produit
      */
+/*
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -103,5 +107,67 @@ class ProductController extends Controller
         Product::create($validated);
 
         return redirect()->route('products.indexView')->with('success', 'Produit ajouté avec succès !');
+    }
+}*/
+
+namespace App\Http\Controllers;
+
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+
+class ProductController extends Controller
+{
+    public function index()
+    {
+        $products = Product::all();
+        return Inertia::render('admin/product-list', ['products' => $products]);
+    }
+
+    public function create()
+    {
+        return Inertia::render('admin/add-product'); // Vue formulaire ajout produit
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name'        => 'required|string|max:255',
+            'description' => 'required|string',
+            'price'       => 'required|numeric',
+            'stock'       => 'required|integer',
+            'image_path'  => 'nullable|string',
+        ]);
+
+        Product::create($validated); // Utilise le modèle avec $fillable
+
+        return redirect()->route('products.indexView')->with('success', 'Produit ajouté avec succès !');
+    }
+
+    public function show($id)
+    {
+        $product = Product::with(['variants', 'images'])->findOrFail($id);
+        return Inertia::render('products/details', ['product' => $product]);
+    }
+
+    public function indexView(Request $request)
+    {
+        $query = Product::query();
+
+        switch ($request->get('sort')) {
+            case 'price_asc':
+                $query->orderBy('price', 'asc');
+                break;
+            case 'price_desc':
+                $query->orderBy('price', 'desc');
+                break;
+            default:
+                $query->latest();
+                break;
+        }
+
+        $products = $query->paginate(12)->withQueryString();
+
+        return Inertia::render('products/list', ['products' => $products]);
     }
 }
