@@ -81,7 +81,7 @@ export default function AddProduct() {
                     />
                     {errors.price && <div className="text-red-500">{errors.price}</div>}
                 </div>
-                <div>
+                {/* <div>
                     <label htmlFor="stock">Stock :</label>
                     <input
                         type="number"
@@ -93,18 +93,21 @@ export default function AddProduct() {
                         className="w-full rounded-lg border border-[#6C3989] p-2"
                     />
                     {errors.stock && <div className="text-red-500">{errors.stock}</div>}
-                </div>
+                </div> */}
                 <div>
-                    <label htmlFor="image">Image :</label>
+                    <label htmlFor="image" className="font-medium text-gray-700">
+                        Image :
+                    </label>
                     <input
                         type="file"
                         id="image"
                         accept="image/*"
                         onChange={(e) => setData('image', e.target.files[0])}
-                        className="w-full rounded-lg border border-[#6C3989] p-2"
+                        className="w-full cursor-pointer rounded-lg border border-[#6C3989] p-2 text-gray-500 file:mr-4 file:cursor-pointer file:rounded-md file:border-0 file:bg-[#6C3989] file:px-4 file:py-2 file:text-white hover:file:bg-[#5a2e70]"
                     />
                     {errors.image && <div className="text-red-500">{errors.image}</div>}
                 </div>
+
                 <div>
                     <label className="mb-2 block font-semibold">Tailles et stocks :</label>
                     <div className="grid grid-cols-4 gap-3">
