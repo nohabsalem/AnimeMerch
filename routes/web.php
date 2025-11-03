@@ -6,6 +6,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
 use App\Http\Controllers\VariantController;
 
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+
 Route::get('/', function () {
 
     // $users = \App\Models\User::all();
