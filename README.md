@@ -34,11 +34,9 @@ Il se ressemble globalement à un vrai site, avec toutes les pages (ou presque) 
     npm install
 
     ```
-
-    // Paramétrer le .env en se basant sur .env.example (copier)
-
+ **Lancer le projet**
     ```cmd
-    php artisan key:generate (clé de sécurité Laravel)
+
     php artisan migrate
     php artisan db:seed
 
