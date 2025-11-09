@@ -4,6 +4,7 @@ const navigation = {
     Mentions: [
         { name: 'Politique de Confidentialité', href: '/privacy-policy' },
         { name: 'Conditions de Vente', href: '/terms-of-sale' },
+        { name: 'RGPD', href: '/rgpd' },
     ],
     Support: [{ name: 'Nous contacter', href: '' }],
     Entreprise: [

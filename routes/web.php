@@ -63,6 +63,7 @@ Route::get('/products/{id}', [ProductController::class, 'show'])->name('products
 Route::get('/products', function () {
     return Inertia::render('products/list');
 })->name('products');
+
 // Policy Pages :
 Route::get('/terms-of-sale', function () {
     return Inertia::render('policies/cgv');
@@ -87,6 +88,10 @@ Route::get('/help', function () {
 Route::get('/contact', function () {
     return Inertia::render('policies/contact');
 })->name('contact');
+
+Route::get('rgpd', function () {
+    return Inertia::render('policies/rgpd');
+})->name('rgpd');
 
 // Payment Pages
 Route::get('/payment', function () {
