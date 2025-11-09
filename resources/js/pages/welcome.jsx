@@ -28,16 +28,49 @@ export default function Welcome() {
                 </button>
             </div>
 
-            <main className="flex flex-row items-center justify-center py-8">
-                <div className="flex w-full justify-center md:w-1/2">
-                    <img src={Jotaro} alt="Jotaro Kujo" className="" />
+            <main className="flex w-full flex-row flex-wrap items-stretch justify-center gap-0 max-[640px]:flex-col">
+                {/* Image 1 */}
+                <div className="relative aspect-[2/3] w-1/2 max-[640px]:w-full">
+                    <img src={Jotaro} alt="Jotaro Kujo" className="h-full w-full object-cover" />
+                    <Link
+                        href="/products"
+                        className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 duration-200 hover:bg-black/30"
+                        aria-label="Voir la mode femme"
+                    >
+                        <span className="mb-2 text-sm tracking-wide text-white">ALLER À LA MODE</span>
+                        <span className="text-4xl font-bold text-white md:text-5xl">FEMME</span>
+                    </Link>
                 </div>
-                <div className="flex w-full justify-center md:w-1/2">
-                    <img src={Johnny} alt="Johnny Joestar" className="" />
+
+                {/* Image 2 */}
+                <div className="relative aspect-[2/3] w-1/2 max-[640px]:w-full">
+                    <img src={Johnny} alt="Johnny Joestar" className="h-full w-full object-cover" />
+                    <Link
+                        href="/products"
+                        className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 duration-200 hover:bg-black/30"
+                        aria-label="Voir la mode homme"
+                    >
+                        <span className="mb-2 text-sm tracking-wide text-white">ALLER À LA MODE</span>
+                        <span className="text-4xl font-bold text-white md:text-5xl">HOMME</span>
+                    </Link>
                 </div>
             </main>
-            <div className="flex w-full">
+
+            {/* <div className="flex w-full">
                 <img src={Araki} alt="Hirohiko Araki" />
+            </div> */}
+            <div className="relative flex w-full flex-col">
+                <img src={Araki} alt="Hirohiko Araki" />
+                {/* Petit texte discrètement sur l'image, par exemple en haut à gauche */}
+                <span className="absolute top-3 left-3 rounded px-2 py-1 text-sm text-white">
+                    <a
+                        href="https://www.lexpress.fr/culture/apres-le-louvre-le-mangaka-hirohiko-araki-s-offre-une-place-au-musee-a-tokyo_2019196.html?cmp_redirect=true"
+                        target="_blank"
+                        className="underline"
+                    >
+                        Hirohiko Araki, et ses oeuvres, au Centre National des Arts de Tokyo
+                    </a>
+                </span>
             </div>
 
             <Carrousel />
