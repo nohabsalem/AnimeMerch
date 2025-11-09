@@ -3,7 +3,7 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 // Products Images :
 import JosukeBG from '../assets/img/josuke2.svg';
-import Araki from '../assets/img/models/araki-banner.jpg';
+import Araki from '../assets/img/models/hirohikoo.jpg';
 import Johnny from '../assets/img/models/johnny-ia.png';
 import Jotaro from '../assets/img/models/jotaro-ia2.png';
 // Components :
