@@ -34,7 +34,7 @@ Il se ressemble globalement à un vrai site, avec toutes les pages (ou presque) 
     npm install
 
     ```
- **Lancer le projet**
+ 2. **Lancer le projet**
     ```cmd
 
     php artisan migrate
